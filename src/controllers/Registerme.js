@@ -32,15 +32,13 @@ const Registerme = (req, res) => {
 };
 
 const registerComputer = async (ethernetDetails) => {
-    console.log(ethernetDetails)
+    
   if (!ethernetDetails) {
     return null;
   } else {
     const { hostname, ip, mac } = ethernetDetails;
     console.log(hostname, ip, mac)
     const url = `http://localhost:5000/api/registerComputer/${hostname}/${ip}/${mac}/conectado`;
-
-    //const url = `http://10.10.1.45:5000/registerComputer/${hostname}/${ip}/${mac}`;
 
     try {
       await axios.post(url);
