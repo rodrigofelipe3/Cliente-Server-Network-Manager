@@ -1,7 +1,7 @@
 const express = require("express")
 const sendHeartbeat = require("./src/controllers/SendAHb")
 const { route } = require("./src/routes/routes")
-
+const cors = require("cors")
 const checkShutdownTime = require("./src/utils/scheduleShutdown")
 const logToFile = require("./src/utils/logToFile")
 const sendComputerInfo = require("./src/controllers/sendComputerinfo")

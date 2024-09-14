@@ -1,6 +1,7 @@
 const express = require("express");
 const Shutdown0 = require("../controllers/Shutdown");
-const { updateSchedule } = require("../database/database");
+const { updateSchedule, deleteFromSchedule } = require("../database/database");
+const logToFile = require("../utils/logToFile");
 const router = express.Router()
 
 router.post('/shutdown', async (req, res) => {  
@@ -14,7 +15,6 @@ router.post('/shutdown', async (req, res) => {
 
 router.post('/updateSchedule/:time', (req, res) => {
     const newTime = req.params.time;
-    // Verifica se o horário é válido no formato HH:MM
     if (!/^\d{2}:\d{2}$/.test(newTime)) {
         logToFile('Formato de horário inválido. Use HH:MM.');
         return res.status(400)
@@ -26,5 +26,19 @@ router.post('/updateSchedule/:time', (req, res) => {
         return res.status(500)
     }
 });
+
+router.post("/cancel/shutdown",  (req, res)=>{
+    try { 
+       const response =  deleteFromSchedule(1, res)
+       if (response.error) { 
+            logToFile(response.error)
+       } else { 
+            logToFile(response.ok)
+       }
+    }catch (err){ 
+        logToFile("error " + err)
+    }
+
+})
 
 module.exports = router
