@@ -1,12 +1,13 @@
 {
   "scripts": {
-    "start": "nodemon ./src/app.js"
+    "start": "nodemon app.js"
   },
   "dependencies": {
     "axios": "^1.7.7",
     "cors": "^2.8.5",
     "express": "^4.21.0",
     "nodemon": "^3.1.4",
+    "ps-list": "^8.1.1",
     "sqlite3": "^5.1.7",
     "systeminformation": "^5.23.5"
   }
