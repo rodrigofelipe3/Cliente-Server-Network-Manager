@@ -4,7 +4,6 @@ const logToFile = require('../utils/logToFile');
 
 const hostname = os.hostname();
 
-
 const sendHeartbeat = async () => {
   try {
     const response = await axios.post(`http://localhost:5000/api/heartbeat/${hostname}`);
@@ -14,7 +13,7 @@ const sendHeartbeat = async () => {
         logToFile("Servidor não encontrado ou está offline")
     }
   } catch (error) {
-    logToFile(`Erro ao enviar heartbeat: ${error.message}`);
+    logToFile(`Erro ao enviar heartbeat: ${error}`);
   }
 };
 
