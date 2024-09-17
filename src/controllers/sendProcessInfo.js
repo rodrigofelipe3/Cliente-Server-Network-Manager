@@ -32,7 +32,7 @@ async function getProcessList() {
 }
 
 
-const sendComputerInfo = async () => {
+const sendProcessInfo = async () => {
     try {
         const systemStats = await getSystemStats();
         const processList = await getProcessList();
@@ -40,11 +40,11 @@ const sendComputerInfo = async () => {
             system: systemStats,
             processes: processList
         }
-        const response = await axios.post('http://localhost:5000/api/taskManager', computerData);
-        logToFile('Dados enviados com sucesso:', response);
+        
+        logToFile('Dados enviados com sucesso');
     } catch (error) {
         logToFile('Erro ao coletar ou enviar dados:', error);
     }
 };
 
-module.exports = sendComputerInfo
+module.exports = sendProcessInfo
