@@ -2,6 +2,7 @@ const express = require("express");
 const Shutdown0 = require("../controllers/Shutdown");
 const { updateSchedule, deleteFromSchedule } = require("../database/database");
 const logToFile = require("../utils/logToFile");
+const {sendProcessInfo, sendProcessInfoByMemory} = require("../controllers/sendProcessInfo");
 const router = express.Router()
 
 router.post('/shutdown', async (req, res) => {  
@@ -39,6 +40,24 @@ router.post("/cancel/shutdown",  (req, res)=>{
         logToFile("error " + err)
     }
 
+})
+
+router.get("/sendprocess", async (req, res)=> { 
+    try { 
+        const computerData = await sendProcessInfo()
+        return res.status(200).json({data: computerData})
+    }catch(error){ 
+        return res.status(500).json({error: "Houve um erro " + error})
+    }
+})
+
+router.get("/sendprocess/memory", async (req, res)=> { 
+    try { 
+        const computerData = await sendProcessInfoByMemory()
+        return res.status(200).json({data: computerData})
+    }catch(error){ 
+        return res.status(500).json({error: "Houve um erro " + error})
+    }
 })
 
 module.exports = router

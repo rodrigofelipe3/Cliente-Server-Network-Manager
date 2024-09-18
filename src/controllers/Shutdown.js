@@ -1,4 +1,4 @@
-const exec = require("child_process");
+const exec = require("child_process")
 const logToFile = require("../utils/logToFile");
 
 const Shutdown0 = (res) => { 

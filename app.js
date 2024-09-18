@@ -1,22 +1,21 @@
 const express = require("express")
 const sendHeartbeat = require("./src/controllers/SendAHb")
-const { route } = require("./src/routes/routes")
+const route = require("./src/routes/routes")
 const cors = require("cors")
 const checkShutdownTime = require("./src/utils/scheduleShutdown")
 const logToFile = require("./src/utils/logToFile")
 const sendComputerInfo = require("./src/controllers/sendComputerinfo")
-const { CreateTable } = require("./src/database/database")
-const sendProcessInfo = require("./src/controllers/sendProcessInfo")
+const  CreateTable = require("./src/database/database")
 
 const app = express()
 const PORT = 5001
 
 //############APP USE
+app.use(cors())
 app.use(express.json())
 app.use("/api", route)
 //###########FUNÇÕES
-console.log(sendProcessInfo())
-CreateTable()
+CreateTable
 sendComputerInfo()
 setInterval(sendHeartbeat, 60000);
 setInterval(checkShutdownTime, 60000);
