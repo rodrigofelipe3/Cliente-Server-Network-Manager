@@ -4,9 +4,9 @@ const logToFile = require("../utils/logToFile");
 
 const db = new sqlite3.Database(path.join(__dirname, "database.db"), (err) => {
   if (err) {
-    logToFile(`Erro ao conectar ao banco de dados: ${err}`);
+    logToFile.logToFile(`Erro ao conectar ao banco de dados: ${err}`);
   } else {
-    logToFile("Conectado ao banco de dados SQLite.");
+    logToFile.logToFile("Conectado ao banco de dados SQLite.");
   }
 });
 
@@ -19,9 +19,9 @@ const CreateTable = () => {
         );`,
       (err) => {
         if (err) {
-          logToFile(`Erro ao criar a tabela: ${err}`);
+          logToFile.logToFile(`Erro ao criar a tabela: ${err}`);
         } else {
-          logToFile('Tabela "schedule" criada com sucesso.');
+          logToFile.logToFile('Tabela "schedule" criada com sucesso.');
         }
       }
     );
@@ -34,10 +34,10 @@ const CreateTable = () => {
 const updateSchedule = (newTime, res) => {
   db.run(`UPDATE schedule SET time = ? WHERE id = 1`, [newTime], (err) => {
     if (err) {
-      logToFile(`Erro ao atualizar o horário: ${err.message}`);
+      logToFile.logToFile(`Erro ao atualizar o horário: ${err.message}`);
       return res.status(500);
     }
-    logToFile(`Horário atualizado para: ${newTime}`);
+    logToFile.logToFile(`Horário atualizado para: ${newTime}`);
     return res.status(200);
   });
 };
@@ -57,7 +57,7 @@ const deleteFromSchedule = (id, res) => {
 const GetData = (callback) => {
   db.get(`SELECT time FROM schedule WHERE id = 1`, (err, row) => {
     if (err) {
-      logToFile(`Erro ao consultar a tabela: ${err.message}`);
+      logToFile.logToFile(`Erro ao consultar a tabela: ${err.message}`);
       return callback(err, null);
     } else {
       return callback(null, row);

@@ -8,12 +8,12 @@ const sendHeartbeat = async () => {
   try {
     const response = await axios.post(`http://localhost:5000/api/heartbeat/${hostname}`);
     if(response.status == 200){ 
-        logToFile("HeartBeat enviado com sucesso!")
+      logToFile.logToFile("HeartBeat enviado com sucesso!")
     }else  { 
-        logToFile("Servidor não encontrado ou está offline")
+      logToFile.logToFile("Servidor não encontrado ou está offline")
     }
   } catch (error) {
-    logToFile(`Erro ao enviar heartbeat: ${error}`);
+    logToFile.logToFile(`Erro ao enviar heartbeat: ${error}`);
   }
 };
 

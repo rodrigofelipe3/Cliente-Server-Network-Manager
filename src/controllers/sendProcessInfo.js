@@ -64,11 +64,11 @@ const sendProcessInfoByMemory = async () => {
       system: systemStats,
       processes: processListByMemory
     };
-    logToFile('Dados de processos por uso de memória enviados com sucesso');
+    logToFile.logToFile('Dados de processos por uso de memória enviados com sucesso');
     
     return computerData;
   } catch (error) {
-    logToFile('Erro ao coletar ou enviar dados de memória:', error);
+    logToFile.logToFile('Erro ao coletar ou enviar dados de memória:', error);
   }
 };
 
@@ -80,11 +80,11 @@ const sendProcessInfo = async () => {
             system: systemStats,
             processes: processList
         }
-        logToFile('Dados enviados com sucesso');
+        logToFile.logToFile('Dados enviados com sucesso');
         console.log(computerData)
         return computerData
     } catch (error) {
-        logToFile('Erro ao coletar ou enviar dados:', error);
+      logToFile.logToFile('Erro ao coletar ou enviar dados:', error);
     }
 };
 

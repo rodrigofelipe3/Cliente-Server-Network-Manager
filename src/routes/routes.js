@@ -17,7 +17,7 @@ router.post('/shutdown', async (req, res) => {
 router.post('/updateSchedule/:time', (req, res) => {
     const newTime = req.params.time;
     if (!/^\d{2}:\d{2}$/.test(newTime)) {
-        logToFile('Formato de horário inválido. Use HH:MM.');
+        logToFile.logToFile('Formato de horário inválido. Use HH:MM.');
         return res.status(400)
     }
     try { 
@@ -32,12 +32,12 @@ router.post("/cancel/shutdown",  (req, res)=>{
     try { 
        const response =  deleteFromSchedule(1, res)
        if (response.error) { 
-            logToFile(response.error)
+        logToFile.logToFile(response.error)
        } else { 
-            logToFile(response.ok)
+        logToFile.logToFile(response.ok)
        }
     }catch (err){ 
-        logToFile("error " + err)
+        logToFile.logToFile("error " + err)
     }
 
 })
