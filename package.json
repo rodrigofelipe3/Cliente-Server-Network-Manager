@@ -1,9 +1,17 @@
 {
+  "name": "Cliente Server",
+  "version": "1.0.0",
+  "bin": "app.js",
   "scripts": {
     "start": "nodemon app.js"
   },
+  "pkg": {
+    "scripts": "app.js",
+    "targets": [
+      "node18-win-x64"
+    ]
+  },
   "dependencies": {
-    "axios": "^1.7.7",
     "cors": "^2.8.5",
     "electron": "^32.1.1",
     "express": "^4.21.0",

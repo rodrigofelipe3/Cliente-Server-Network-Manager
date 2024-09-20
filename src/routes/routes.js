@@ -3,6 +3,7 @@ const Shutdown0 = require("../controllers/Shutdown");
 const { updateSchedule, deleteFromSchedule } = require("../database/database");
 const logToFile = require("../utils/logToFile");
 const {sendProcessInfo, sendProcessInfoByMemory} = require("../controllers/sendProcessInfo");
+const { ShareScreen } = require("../controllers/sendScreen");
 const router = express.Router()
 
 router.post('/shutdown', async (req, res) => {  
@@ -58,6 +59,13 @@ router.get("/sendprocess/memory", async (req, res)=> {
     }catch(error){ 
         return res.status(500).json({error: "Houve um erro " + error})
     }
+})
+
+router.post("/share/screen/:ip", (req, res)=>{ 
+
+    const ip = req.params.ip
+    ShareScreen(ip)
+    return res.status(200).json({ok: "TUDO OK"})
 })
 
 module.exports = router

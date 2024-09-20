@@ -1,4 +1,3 @@
-const axios = require('axios');
 const si = require('systeminformation');
 const os = require('os'); // Importa a biblioteca os
 const logToFile = require('../utils/logToFile');
@@ -40,7 +39,7 @@ const sendComputerInfo = async () => {
             main_adapter: `${mainAdapterDetails.iface} (${mainAdapterDetails.type})`, // Adaptador principal
         };
         console.log(computerData)
-        const response = await fetch('http://localhost:5000/api/registerComputer', {
+        const response = await fetch('http://10.10.1.45:5000/api/registerComputer', {
             method: "POST",
             headers: { 
                 "Content-Type":"application/json"

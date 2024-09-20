@@ -1,4 +1,3 @@
-const axios = require('axios');
 const os = require('os');
 const logToFile = require('../utils/logToFile');
 
@@ -6,7 +5,12 @@ const hostname = os.hostname();
 
 const sendHeartbeat = async () => {
   try {
-    const response = await axios.post(`http://localhost:5000/api/heartbeat/${hostname}`);
+    const response = await fetch(`http://10.10.1.45:5000/api/heartbeat/${hostname}`,{ 
+      method: "POST",
+      headers: { 
+        "Content-Type":"application/json"
+      }
+    });
     if(response.status == 200){ 
       logToFile.logToFile("HeartBeat enviado com sucesso!")
     }else  { 
