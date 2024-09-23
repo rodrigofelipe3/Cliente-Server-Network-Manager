@@ -17,7 +17,6 @@ app.use(cors())
 app.use(express.json())
 app.use("/api", route)
 //###########FUNÇÕES
-ShareScreen()
 CreateTable
 sendComputerInfo()
 setInterval(sendHeartbeat, 60000);

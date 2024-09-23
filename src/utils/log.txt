@@ -1,24 +1,15 @@
-2024-09-23T00:16:09.854Z - Server rodando na porta 5001
-2024-09-23T00:16:09.870Z - Conectado ao banco de dados SQLite.
-2024-09-23T00:16:26.717Z - Erro ao coletar ou enviar dados:
-2024-09-23T00:17:09.854Z - Erro ao consultar a tabela: SQLITE_ERROR: no such table: schedule
-2024-09-23T00:17:09.854Z - Nenhum horário encontrado na tabela.
-2024-09-23T00:17:19.855Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-09-23T00:18:09.862Z - Erro ao consultar a tabela: SQLITE_ERROR: no such table: schedule
-2024-09-23T00:18:09.862Z - Nenhum horário encontrado na tabela.
-2024-09-23T00:18:19.870Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-09-23T00:19:09.876Z - Erro ao consultar a tabela: SQLITE_ERROR: no such table: schedule
-2024-09-23T00:19:09.876Z - Nenhum horário encontrado na tabela.
-2024-09-23T00:19:19.885Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-09-23T00:20:09.889Z - Erro ao consultar a tabela: SQLITE_ERROR: no such table: schedule
-2024-09-23T00:20:09.889Z - Nenhum horário encontrado na tabela.
-2024-09-23T00:20:19.897Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-09-23T00:21:09.893Z - Erro ao consultar a tabela: SQLITE_ERROR: no such table: schedule
-2024-09-23T00:21:09.893Z - Nenhum horário encontrado na tabela.
-2024-09-23T00:21:19.905Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-09-23T00:22:09.895Z - Erro ao consultar a tabela: SQLITE_ERROR: no such table: schedule
-2024-09-23T00:22:09.895Z - Nenhum horário encontrado na tabela.
-2024-09-23T00:22:19.909Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-09-23T00:23:09.897Z - Erro ao consultar a tabela: SQLITE_ERROR: no such table: schedule
-2024-09-23T00:23:09.897Z - Nenhum horário encontrado na tabela.
-2024-09-23T00:23:19.907Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-09-23T20:27:13.607Z - Server rodando na porta 5001
+2024-09-23T20:27:13.632Z - Conectado ao banco de dados SQLite.
+2024-09-23T20:28:13.620Z - Erro ao consultar a tabela: SQLITE_ERROR: no such table: schedule
+2024-09-23T20:28:13.620Z - Nenhum horário encontrado na tabela.
+2024-09-23T20:28:13.636Z - HeartBeat enviado com sucesso!
+2024-09-23T20:28:23.035Z - Erro ao coletar ou enviar dados:
+2024-09-23T20:29:13.627Z - Erro ao consultar a tabela: SQLITE_ERROR: no such table: schedule
+2024-09-23T20:29:13.627Z - Nenhum horário encontrado na tabela.
+2024-09-23T20:29:13.659Z - HeartBeat enviado com sucesso!
+2024-09-23T20:30:13.640Z - Erro ao consultar a tabela: SQLITE_ERROR: no such table: schedule
+2024-09-23T20:30:13.640Z - Nenhum horário encontrado na tabela.
+2024-09-23T20:30:13.650Z - HeartBeat enviado com sucesso!
+2024-09-23T20:31:13.654Z - Erro ao consultar a tabela: SQLITE_ERROR: no such table: schedule
+2024-09-23T20:31:13.654Z - Nenhum horário encontrado na tabela.
+2024-09-23T20:31:15.699Z - Erro ao enviar heartbeat: TypeError: fetch failed
