@@ -64,8 +64,13 @@ router.get("/sendprocess/memory", async (req, res)=> {
 router.post("/share/screen/:ip", (req, res)=>{ 
 
     const ip = req.params.ip
-    ShareScreen(ip)
-    return res.status(200).json({ok: "TUDO OK"})
+    try { 
+        ShareScreen(ip)
+        return res.status(200)
+    }catch(err){ 
+        return res.status(500)
+    }
+   
 })
 
 module.exports = router
