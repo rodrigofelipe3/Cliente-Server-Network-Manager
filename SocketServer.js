@@ -30,9 +30,63 @@ adminSocket.on("mouseMove", (data) => {
 
 // Receber pressionamentos de teclas do servidor administrador
 adminSocket.on("keyboard", (data) => {
-  const keysToPress = data.key; // data.key pode ser uma string
-  for (const char of keysToPress) {
-    robot.keyTap(char);
-    console.log(`Tecla replicada: ${char}`);
+  console.log(data);
+  if (
+    data == "UP ARROW" ||
+    data == "LEFT ARROW" ||
+    data == "DOWN ARROW" ||
+    data == "RIGHT ARROW"
+  ) {
+    const key = data.split(" ")[0];
+    console.log(key)
+    robot.keyTap(key.toLowerCase());
   }
+  if (
+    data !== "MOUSE LEFT" &&
+    data !== "MOUSE RIGHT" &&
+    data !== "MOUSE MIDDLE" &&
+    data !== "UP ARROW" &&
+    data !== "LEFT ARROW" &&
+    data !== "DOWN ARROW" &&
+    data !== "RIGHT ARROW" &&
+    data !== "PRINT SCREEN" && 
+    data !== "LEFT CTRL" &&
+    data !== "RIGHT CTRL" &&
+    data !== "RETURN" && 
+    data == "PAGE DOWN" &&
+    data == "PAGE UP"
+    
+  ) {
+    robot.keyTap(data.toLowerCase());
+  }else if(data == "PRINT SCREEN"){ 
+    robot.keyTap("printscreen");
+  }else if(
+    data == "LEFT CTRL" ||
+    data == "RIGHT CTRL"
+  ){ 
+    robot.keyTap("control");
+  }else if(data == "RETURN") { 
+      robot.keyTap("enter")
+  }
+  else if(data == "PAGE DOWN" || data == "PAGE UP") { 
+    const key = data.replace(" ", "")
+    robot.keyTap(key.toLowerCase())
+  }
+  else if(
+    data == "NUMPAD 1"|| 
+    data == "NUMPAD 2"||
+    data == "NUMPAD 3"||
+    data == "NUMPAD 4"||
+    data == "NUMPAD 5"||
+    data == "NUMPAD 6"||
+    data == "NUMPAD 7"||
+    data == "NUMPAD 8"||
+    data == "NUMPAD 9"
+  ) { 
+    const key = data.replace(" ", "_")
+    robot.keyTap(key.toLowerCase())
+  }else (
+    console.log(data)
+  )
+
 });
