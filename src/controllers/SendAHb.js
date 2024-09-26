@@ -4,7 +4,7 @@ const logToFile = require('../utils/logToFile');
 const hostname = os.hostname();
 
 const sendHeartbeat = async () => {
-  console.log(hostname)
+  
   try {
     const response = await fetch(`http://10.10.1.45:5000/api/heartbeat/${hostname}`,{ 
       method: "POST",

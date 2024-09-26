@@ -4,11 +4,13 @@ const { updateSchedule, deleteFromSchedule } = require("../database/database");
 const logToFile = require("../utils/logToFile");
 const {sendProcessInfo, sendProcessInfoByMemory} = require("../controllers/sendProcessInfo");
 const { ShareScreen } = require("../controllers/sendScreen");
+const cancelShutdown = require("../controllers/CancelShutdown");
 const router = express.Router()
 
 router.post('/shutdown', async (req, res) => {  
     try { 
-        const response = await Shutdown0(res)
+        const response = Shutdown0(res)
+        console.log(response)
         return response
     }catch{ 
         return res.status(500)
@@ -29,16 +31,25 @@ router.post('/updateSchedule/:time', (req, res) => {
     }
 });
 
-router.post("/cancel/shutdown",  (req, res)=>{
+router.post("/cancel/shutdown/",  async (req, res)=>{
+    const id = 1
     try { 
-       const response =  deleteFromSchedule(1, res)
-       if (response.error) { 
-        logToFile.logToFile(response.error)
-       } else { 
-        logToFile.logToFile(response.ok)
+       const response = await cancelShutdown(id)
+       console.log(response)
+       if (response.ok == true) { 
+            logToFile.logToFile(response.msg)
+            return res.status(200).json({ok: "Agendamento deletado com sucesso!"})
+       } else if (response.ok == false && response.msg !== 'Command failed: shutdown -a\n' + "N�o foi poss�vel anular o desligamento do sistema porque o sistema n�o estava sendo desligado.(1116)\n") { 
+            logToFile.logToFile(response.msg)
+            return res.status(500).json({error: "Erro ao deletar agendamento"})
+       } else if (response.ok == false && response.msg ==  'Command failed: shutdown -a\n' + "N�o foi poss�vel anular o desligamento do sistema porque o sistema n�o estava sendo desligado.(1116)\n"){ 
+            logToFile.logToFile(response.msg)
+            return res.status(200).json({msg: "Nenhum agendamento programado"})
        }
-    }catch (err){ 
-        logToFile.logToFile("error " + err)
+     
+    }catch (error){ 
+        logToFile.logToFile("error " + error)
+        return res.status(500).json({error: "Erro interno: " + error})
     }
 
 })

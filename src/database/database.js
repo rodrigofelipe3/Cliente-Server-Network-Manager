@@ -42,13 +42,15 @@ const updateSchedule = (newTime, res) => {
   });
 };
 
-const deleteFromSchedule = (id, res) => {
+const deleteFromSchedule = (id) => {
     db.serialize(() => {
        return db.run(`DELETE FROM schedule WHERE id = ?`, [id], function(err) {
                 if (err) {
-                    return res.status(500).json({error: err})
+                    logToFile.logToFile("Erro ao deletar horário de desligamento: " + err)
+                    return false
                 } else {
-                  return res.status(200).json({ok: "Cancelamento feito com sucesso!"})
+                    logToFile.logToFile("Cancelamento feito com sucesso!")
+                    return true
                 }
             });
     });
