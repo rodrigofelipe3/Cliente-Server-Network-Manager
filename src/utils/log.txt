@@ -1,7 +1,3 @@
-2024-09-27T01:16:02.231Z - Server rodando na porta 5001
-2024-09-27T01:16:02.248Z - Conectado ao banco de dados SQLite.
-2024-09-27T01:16:06.706Z - Dados de processos que mais usam memória enviados com sucesso
-2024-09-27T01:16:12.041Z - Dados enviados com sucesso
-2024-09-27T01:16:18.660Z - Dados de processos que mais usam memória enviados com sucesso
-2024-09-27T01:16:22.529Z - Dados enviados com sucesso
-2024-09-27T01:16:25.839Z - Dados de processos que mais usam memória enviados com sucesso
+2024-09-27T17:52:42.100Z - Server rodando na porta 5001
+2024-09-27T17:52:42.126Z - Conectado ao banco de dados SQLite.
+2024-09-27T17:53:18.703Z - Dados de processos que mais usam memória enviados com sucesso

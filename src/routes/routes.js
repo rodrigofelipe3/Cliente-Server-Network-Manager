@@ -5,6 +5,7 @@ const logToFile = require("../utils/logToFile");
 const {sendProcessInfo, sendProcessInfoByMemory} = require("../controllers/sendProcessInfo");
 const { ShareScreen } = require("../controllers/sendScreen");
 const cancelShutdown = require("../controllers/CancelShutdown");
+const { TaskKill } = require("../controllers/Taskkill");
 const router = express.Router()
 
 router.post('/shutdown', async (req, res) => {  
@@ -82,6 +83,20 @@ router.post("/share/screen/:ip", (req, res)=>{
         return res.status(500)
     }
    
+})
+
+router.post("/taskkill/:pid", async (req, res)=> { 
+    const pid = req.params.pid
+    try { 
+        const response = await TaskKill(pid)
+        if(response.ok == true) { 
+            return res.status(200).json(response.msg)
+        } else { 
+            return res.status(404).json(response.msg)
+        }
+    }catch(error){ 
+        return res.status(500).json({error: "Erro interto " + error})
+    }
 })
 
 module.exports = router
