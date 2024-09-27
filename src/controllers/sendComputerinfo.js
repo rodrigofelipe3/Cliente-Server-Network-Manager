@@ -39,7 +39,7 @@ const sendComputerInfo = async (ip) => {
             main_adapter: `${mainAdapterDetails.iface} (${mainAdapterDetails.type})`, // Adaptador principal
         };
         
-        const response = await fetch(`http://${"10.10.1.45"}:5000/api/registerComputer`, {
+        const response = await fetch(`http://${"127.0.0.1"}:5000/api/registerComputer`, {
             method: "POST",
             headers: { 
                 "Content-Type":"application/json"

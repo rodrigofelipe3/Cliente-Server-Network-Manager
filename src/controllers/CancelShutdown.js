@@ -10,14 +10,14 @@ const cancelShutdown = async (id) => {
         exec.exec(comando, (error, stdout, stderr) => {
             if (error) {
                 logToFile.logToFile(`Erro ao cancelar o shutdown: ${error.message}`);
-                resolve({ ok: false, msg: error.message }); // Retorna o erro
+                resolve({ ok: false, msg: error.message }); 
             } else if (stderr) {
                 logToFile.logToFile(stderr);
-                resolve({ ok: false, msg: stderr }); // Retorna o stderr
+                resolve({ ok: false, msg: stderr }); 
             } else {
                 logToFile.logToFile('Shutdown cancelado com sucesso');
-                deleteFromSchedule(id); // Executa a função de deletar
-                resolve({ ok: true, msg: 'Shutdown cancelado com sucesso' }); // Retorna sucesso
+                deleteFromSchedule(id); 
+                resolve({ ok: true, msg: 'Shutdown cancelado com sucesso' }); 
             }
         });
     });

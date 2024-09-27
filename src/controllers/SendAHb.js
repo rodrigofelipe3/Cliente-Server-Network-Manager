@@ -6,7 +6,7 @@ const hostname = os.hostname();
 const sendHeartbeat = async () => {
   
   try {
-    const response = await fetch(`http://10.10.1.45:5000/api/heartbeat/${hostname}`,{ 
+    const response = await fetch(`http://127.0.0.1:5000/api/heartbeat/${hostname}`,{ 
       method: "POST",
       headers: { 
         "Content-Type":"application/json"
