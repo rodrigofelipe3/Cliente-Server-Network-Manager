@@ -46,7 +46,7 @@ async function getSystemStats() {
       };
       
       logToFile.logToFile('Dados de processos que mais usam memória enviados com sucesso');
-      console.log(computerData);
+      
       return computerData;
     } catch (error) {
       logToFile.logToFile('Erro ao coletar ou enviar dados de memória:', error);
