@@ -1,6 +1,6 @@
 const Shutdown0 = require('../controllers/Shutdown');
 const { GetData } = require('../database/database');
-const logToFile = require('./logToFile');
+const {logToFile} = require('./logToFile');
 
 
 const checkShutdownTime = () => {

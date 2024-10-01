@@ -1,0 +1,6 @@
+2024-10-01T20:29:59.567Z - Server rodando na porta 5001
+2024-10-01T20:29:59.595Z - Conectado ao banco de dados SQLite.
+2024-10-01T20:29:59.596Z - Tabela "schedule" criada com sucesso.
+2024-10-01T20:30:55.513Z - Erro ao coletar ou enviar dados:
+2024-10-01T20:30:59.572Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T20:30:59.572Z - Horário atual (17:30) ainda não atingiu o agendado (18:30).

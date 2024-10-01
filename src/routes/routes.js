@@ -18,39 +18,39 @@ router.post('/shutdown', async (req, res) => {
     }
 });
 
-router.post('/updateSchedule/:time', (req, res) => {
+router.post('/createshutdown/:time', (req, res) => {
     const newTime = req.params.time;
     if (!/^\d{2}:\d{2}$/.test(newTime)) {
         logToFile.logToFile('Formato de horário inválido. Use HH:MM.');
-        return res.status(400)
+        return res.status(400).json({ok: false, error: "Erro na sintaxe do horário"})
     }
     try { 
         const response = updateSchedule(newTime, res);
         return response
     }catch(err) { 
-        return res.status(500)
+        return res.status(500).json({ok: false, error: "Erro interno no cliente, tente novamente."})
     }
 });
 
-router.post("/cancel/shutdown/",  async (req, res)=>{
+router.post("/cancel/shutdown",  async (req, res)=>{
     const id = 1
     try { 
        const response = await cancelShutdown(id)
        console.log(response)
        if (response.ok == true) { 
             logToFile.logToFile(response.msg)
-            return res.status(200).json({ok: "Agendamento deletado com sucesso!"})
+            return res.status(200).json({ok: true, msg: "Desligamento programado cancelado com sucesso!"})
        } else if (response.ok == false && response.msg !== 'Command failed: shutdown -a\n' + "N�o foi poss�vel anular o desligamento do sistema porque o sistema n�o estava sendo desligado.(1116)\n") { 
             logToFile.logToFile(response.msg)
-            return res.status(500).json({error: "Erro ao deletar agendamento"})
+            return res.status(500).json({ok: false, error: "Erro ao deletar agendamento"})
        } else if (response.ok == false && response.msg ==  'Command failed: shutdown -a\n' + "N�o foi poss�vel anular o desligamento do sistema porque o sistema n�o estava sendo desligado.(1116)\n"){ 
             logToFile.logToFile(response.msg)
-            return res.status(200).json({msg: "Nenhum agendamento programado"})
+            return res.status(200).json({ok: true, msg: "Desligamento programado cancelado com sucesso!"})
        }
      
     }catch (error){ 
         logToFile.logToFile("error " + error)
-        return res.status(500).json({error: "Erro interno: " + error})
+        return res.status(500).json({ok: false, error: "Erro interno: " + error})
     }
 
 })
@@ -90,9 +90,9 @@ router.post("/taskkill/:pid", async (req, res)=> {
     try { 
         const response = await TaskKill(pid)
         if(response.ok == true) { 
-            return res.status(200).json(response.msg)
+            return res.status(200).json(response)
         } else { 
-            return res.status(404).json(response.msg)
+            return res.status(404).json(response)
         }
     }catch(error){ 
         return res.status(500).json({error: "Erro interto " + error})

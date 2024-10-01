@@ -34,11 +34,8 @@ const sendComputerInfo = async (ip) => {
             mac_address: macAddress,
             host: host,
             network_devices: networkDevices,
-            network_speed: networkSpeeds,
-            adapter_types: adapterTypes,
-            main_adapter: `${mainAdapterDetails.iface} (${mainAdapterDetails.type})`, // Adaptador principal
         };
-        
+        console.log(computerData)
         const response = await fetch(`http://${"127.0.0.1"}:5000/api/registerComputer`, {
             method: "POST",
             headers: { 

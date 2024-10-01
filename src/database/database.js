@@ -35,10 +35,10 @@ const updateSchedule = (newTime, res) => {
   db.run(`UPDATE schedule SET time = ? WHERE id = 1`, [newTime], (err) => {
     if (err) {
       logToFile.logToFile(`Erro ao atualizar o horário: ${err.message}`);
-      return res.status(500);
+      return res.status(500).json({ok: false, msg: err.message});
     }
     logToFile.logToFile(`Horário atualizado para: ${newTime}`);
-    return res.status(200);
+    return res.status(200).json({ok: true, msg: "Desligamento programado com sucesso!"});
   });
 };
 
