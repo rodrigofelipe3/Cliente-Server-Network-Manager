@@ -1,6 +1,50 @@
-2024-10-01T20:29:59.567Z - Server rodando na porta 5001
-2024-10-01T20:29:59.595Z - Conectado ao banco de dados SQLite.
-2024-10-01T20:29:59.596Z - Tabela "schedule" criada com sucesso.
-2024-10-01T20:30:55.513Z - Erro ao coletar ou enviar dados:
-2024-10-01T20:30:59.572Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-10-01T20:30:59.572Z - Horário atual (17:30) ainda não atingiu o agendado (18:30).
+2024-10-01T23:34:09.186Z - Server rodando na porta 5001
+2024-10-01T23:34:09.201Z - Conectado ao banco de dados SQLite.
+2024-10-01T23:34:09.202Z - Tabela "schedule" criada com sucesso.
+2024-10-01T23:37:07.487Z - Erro ao coletar ou enviar dados:
+2024-10-01T23:37:07.488Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:37:07.488Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:37:09.209Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:38:35.374Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:39:17.860Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:40:09.232Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:42:22.245Z - Erro ao cancelar o shutdown: Command failed: shutdown -a
+N�o foi poss�vel anular o desligamento do sistema porque o sistema n�o estava sendo desligado.(1116)
+
+2024-10-01T23:42:22.247Z - Command failed: shutdown -a
+N�o foi poss�vel anular o desligamento do sistema porque o sistema n�o estava sendo desligado.(1116)
+
+2024-10-01T23:43:12.685Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:43:12.686Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:43:12.686Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:44:13.163Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:47:31.699Z - Horário atualizado para: 18:30
+2024-10-01T23:47:44.233Z - Erro ao cancelar o shutdown: Command failed: shutdown -a
+N�o foi poss�vel anular o desligamento do sistema porque o sistema n�o estava sendo desligado.(1116)
+
+2024-10-01T23:47:44.234Z - Command failed: shutdown -a
+N�o foi poss�vel anular o desligamento do sistema porque o sistema n�o estava sendo desligado.(1116)
+
+2024-10-01T23:50:10.294Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:51:10.650Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:52:11.001Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:53:10.265Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:54:10.537Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:55:10.816Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:56:10.167Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:57:10.465Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:58:10.770Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:59:10.203Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:59:16.382Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:59:16.382Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:59:16.383Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:59:16.383Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-01T23:59:16.383Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-02T00:00:16.217Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-02T00:04:58.679Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-02T00:04:58.679Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-02T00:04:58.680Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-02T00:04:58.680Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-02T00:05:22.149Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-02T00:06:09.488Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-02T00:07:09.503Z - Erro ao enviar heartbeat: TypeError: fetch failed

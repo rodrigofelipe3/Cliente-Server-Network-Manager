@@ -4,7 +4,7 @@ const {logToFile} = require('./logToFile');
 
 
 const checkShutdownTime = () => {
-    GetData((err, row)=> { 
+    /*GetData((err, row)=> { 
         if (row) {
             const currentTime = new Date();
             const currentHours = currentTime.getHours();
@@ -12,15 +12,15 @@ const checkShutdownTime = () => {
             const [scheduledHours, scheduledMinutes] = row.time.split(':').map(Number);
 
             if (currentHours > scheduledHours || (currentHours === scheduledHours && currentMinutes >= scheduledMinutes)) {
-                logToFile.logToFile('Horário agendado alcançado, iniciando shutdown.');
+                logToFile('Horário agendado alcançado, iniciando shutdown.');
                 Shutdown0();
             } else {
                 logToFile(`Horário atual (${currentHours}:${currentMinutes}) ainda não atingiu o agendado (${scheduledHours}:${scheduledMinutes}).`);
             }
         } else {
-            logToFile.logToFile('Nenhum horário encontrado na tabela.');
+            logToFile('Nenhum horário encontrado na tabela.');
         }
-    })
+    })*/
 
 };
 

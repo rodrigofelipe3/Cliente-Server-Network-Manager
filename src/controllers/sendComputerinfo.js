@@ -18,12 +18,6 @@ const sendComputerInfo = async (ip) => {
         const adapterTypes = networkInterfaces.map(net => `${net.iface}: ${net.type}`).join(', ');
 
         
-        const mainAdapter = networkStats
-            .filter(stat => stat.rx_sec > 0 || stat.tx_sec > 0) // Filtrar por adaptadores que estão enviando/recebendo dados
-            .map(stat => stat.iface)[0] || 'N/A'; // Pega o primeiro adaptador com tráfego de dados
-
-        const mainAdapterDetails = networkInterfaces.find(net => net.iface === mainAdapter) || { iface: 'N/A', type: 'N/A' };
-
         const computerData = {
             processor: cpu.manufacturer + ' ' + cpu.brand,
             memory: mem.total,
