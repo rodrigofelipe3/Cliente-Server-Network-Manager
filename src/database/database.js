@@ -2,13 +2,7 @@ const sqlite3 = require("sqlite3").verbose();
 const path = require("path");
 const logToFile = require("../utils/logToFile");
 
-const db = new sqlite3.Database(path.join(__dirname, "database.db"), (err) => {
-  if (err) {
-    logToFile.logToFile(`Erro ao conectar ao banco de dados: ${err}`);
-  } else {
-    logToFile.logToFile("Conectado ao banco de dados SQLite.");
-  }
-});
+const db = new sqlite3.Database(path.join("./database", "database.db"))
 
 const CreateTable = () => {
   db.serialize(() => {

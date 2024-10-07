@@ -1,12 +1,8 @@
 const fs = require('fs');
-const path = require('path');
 
-const logFilePath = path.join(__dirname, 'log.txt');
-
-// Função para verificar e apagar o arquivo de log
 const clearLogFile = () => {
-    if (fs.existsSync(logFilePath)) {
-        fs.unlink(logFilePath, (err) => {
+    if (fs.existsSync("./log/log.txt")) {
+        fs.unlink("./log/log.txt", (err) => {
             if (err) {
                 console.error('Erro ao apagar o arquivo de log:', err.message);
             } else {
@@ -18,11 +14,10 @@ const clearLogFile = () => {
     }
 };
 
-// Função para gravar mensagens no arquivo de log
 const logToFile = (message) => {
     const logMessage = `${new Date().toISOString()} - ${message}\n`;
 
-    fs.appendFile(logFilePath, logMessage, (err) => {
+    fs.appendFile("./log/log.txt", logMessage, (err) => {
         if (err) {
             console.error('Erro ao escrever no arquivo de log:', err.message);
         } else {

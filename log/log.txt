@@ -1,0 +1,2 @@
+2024-10-07T19:55:40.506Z - Server rodando na porta 5001
+2024-10-07T19:55:40.530Z - Tabela "schedule" criada com sucesso.

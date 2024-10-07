@@ -3,18 +3,35 @@ const Shutdown0 = require("../controllers/Shutdown");
 const { updateSchedule, deleteFromSchedule } = require("../database/database");
 const logToFile = require("../utils/logToFile");
 const {sendProcessInfo, sendProcessInfoByMemory} = require("../controllers/sendProcessInfo");
-const { ShareScreen } = require("../controllers/sendScreen");
 const cancelShutdown = require("../controllers/CancelShutdown");
 const { TaskKill } = require("../controllers/Taskkill");
 const router = express.Router()
 
 router.post('/shutdown', async (req, res) => {  
+    const seconds = 600
     try { 
-        const response = Shutdown0(res)
-        console.log(response)
-        return response
+        const response = await Shutdown0(res, seconds)
+        if(response.ok == true) { 
+            return res.status(200).json({ok: true, msg: response.msg})
+        }else { 
+            return res.status(200).json({ok: true, error: response.error})
+        }
     }catch{ 
         return res.status(500)
+    }
+});
+
+router.post('/shutdown/now', async (req, res) => {  
+    const seconds = 10
+    try { 
+        const response = await Shutdown0(res, seconds)
+        if(response.ok == true) { 
+            return res.status(200).json({ok: true, msg: response.msg})
+        }else { 
+            return res.status(200).json({ok: true, error: response.error})
+        }
+    }catch(err){ 
+        return res.status(500).json({ok: false, error: "Erro interno" + err})
     }
 });
 
@@ -73,17 +90,6 @@ router.get("/sendprocess/memory", async (req, res)=> {
     }
 })
 
-router.post("/share/screen/:ip", (req, res)=>{ 
-
-    const ip = req.params.ip
-    try { 
-        ShareScreen(ip)
-        return res.status(200)
-    }catch(err){ 
-        return res.status(500)
-    }
-   
-})
 
 router.post("/taskkill/:pid", async (req, res)=> { 
     const pid = req.params.pid

@@ -18,18 +18,15 @@ async function getSystemStats() {
   async function getTopMemoryProcesses() {
     const processes = await si.processes();
     
-    // Ordenar pelo uso de memória (em ordem decrescente)
     const topProcesses = processes.list
-      .sort((a, b) => b.mem - a.mem) // Ordena os processos pelo uso de memória
-      .slice(0, 15); // Pega os 15 processos que mais usam memória
-  
-    // Monta os detalhes dos processos no formato "Detalhes" do Gerenciador de Tarefas
+      .sort((a, b) => b.mem - a.mem) 
+      .slice(0, 15); 
     const processDetails = await Promise.all(topProcesses.map(async (proc) => {
       return {
         name: proc.name,
         pid: proc.pid,
-        memory: (proc.mem).toFixed(2), // memória usada em MB (ou porcentagem)
-        cpu: proc.cpu.toFixed(2), // uso do processador em %
+        memory: (proc.mem).toFixed(2), 
+        cpu: proc.cpu.toFixed(2), 
       };
     }));
   
@@ -39,7 +36,7 @@ async function getSystemStats() {
   const sendProcessInfoByMemory = async () => {
     try {
       const systemStats = await getSystemStats();
-      const processList = await getTopMemoryProcesses(); // Agora usando os processos que mais usam memória
+      const processList = await getTopMemoryProcesses(); 
       const computerData = { 
         system: systemStats,
         processes: processList,
@@ -63,8 +60,8 @@ async function getProcessList() {
     const processDetails = await Promise.all(topProcesses.map(async (proc) => {
       return {
         name: proc.name,
-        cpu: proc.cpu.toFixed(2), // uso do processador em %
-        memory: (proc.mem).toFixed(2), // memória usada em MB
+        cpu: proc.cpu.toFixed(2),
+        memory: (proc.mem).toFixed(2), 
         pid: proc.pid
       };
     }));

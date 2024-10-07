@@ -1,17 +1,20 @@
 const os = require('os');
 const logToFile = require('../utils/logToFile');
+const { loadConfig } = require('../../loadConfig');
 
 const hostname = os.hostname();
 
+
 const sendHeartbeat = async () => {
-  
+  const server = loadConfig()
   try {
-    const response = await fetch(`http://127.0.0.1:5000/api/heartbeat/${hostname}`,{ 
+    const response = await fetch(`http://${server}:5000/api/heartbeat/${hostname}`,{ 
       method: "POST",
       headers: { 
         "Content-Type":"application/json"
       }
     });
+    console.log(server)
     if(response.status == 200){ 
       logToFile.logToFile("HeartBeat enviado com sucesso!")
     }else  { 

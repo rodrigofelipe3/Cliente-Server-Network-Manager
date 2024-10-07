@@ -1,6 +1,7 @@
 const si = require('systeminformation');
 const os = require('os'); // Importa a biblioteca os
 const logToFile = require('../utils/logToFile');
+const { loadConfig } = require('../../loadConfig');
 
 const sendComputerInfo = async (ip) => {
     try {
@@ -17,6 +18,7 @@ const sendComputerInfo = async (ip) => {
         const networkSpeeds = networkStats.map(stat => `${stat.iface}: ${(stat.rx_sec / 1024).toFixed(2)} KB/s`).join(', ');
         const adapterTypes = networkInterfaces.map(net => `${net.iface}: ${net.type}`).join(', ');
 
+        const server = loadConfig()
         
         const computerData = {
             processor: cpu.manufacturer + ' ' + cpu.brand,
@@ -30,7 +32,7 @@ const sendComputerInfo = async (ip) => {
             network_devices: networkDevices,
         };
         console.log(computerData)
-        const response = await fetch(`http://${"127.0.0.1"}:5000/api/registerComputer`, {
+        const response = await fetch(`http://${server}:5000/api/registerComputer`, {
             method: "POST",
             headers: { 
                 "Content-Type":"application/json"

@@ -4,7 +4,7 @@ const {logToFile} = require('./logToFile');
 
 
 const checkShutdownTime = () => {
-    /*GetData((err, row)=> { 
+    GetData((err, row)=> { 
         if (row) {
             const currentTime = new Date();
             const currentHours = currentTime.getHours();
@@ -20,7 +20,7 @@ const checkShutdownTime = () => {
         } else {
             logToFile('Nenhum horário encontrado na tabela.');
         }
-    })*/
+    })
 
 };
 
