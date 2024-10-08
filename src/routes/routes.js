@@ -10,7 +10,7 @@ const router = express.Router()
 router.post('/shutdown', async (req, res) => {  
     const seconds = 600
     try { 
-        const response = await Shutdown0(res, seconds)
+        const response = await Shutdown0(seconds)
         if(response.ok == true) { 
             return res.status(200).json({ok: true, msg: response.msg})
         }else { 
@@ -22,9 +22,10 @@ router.post('/shutdown', async (req, res) => {
 });
 
 router.post('/shutdown/now', async (req, res) => {  
+    console.log("COMANDO RECEBIDO!")
     const seconds = 10
     try { 
-        const response = await Shutdown0(res, seconds)
+        const response = await Shutdown0( seconds)
         if(response.ok == true) { 
             return res.status(200).json({ok: true, msg: response.msg})
         }else { 

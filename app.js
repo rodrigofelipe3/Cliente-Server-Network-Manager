@@ -6,7 +6,6 @@ const checkShutdownTime = require("./src/utils/scheduleShutdown")
 const logToFile = require("./src/utils/logToFile")
 const sendComputerInfo = require("./src/controllers/sendComputerinfo")
 const  {CreateTable} = require("./src/database/database")
-const { loadConfig } = require("./loadConfig")
 const app = express()
 
 
@@ -18,7 +17,6 @@ app.use(cors())
 app.use(express.json())
 app.use("/api", route)
 //###########FUNÇÕES
-loadConfig()
 CreateTable()
 sendComputerInfo()
 setInterval(sendHeartbeat, 10000);

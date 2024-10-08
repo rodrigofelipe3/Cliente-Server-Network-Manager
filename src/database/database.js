@@ -7,26 +7,40 @@ const db = new sqlite3.Database(path.join("./database", "database.db"))
 const CreateTable = () => {
   db.serialize(() => {
     db.run(
-      `CREATE TABLE IF NOT EXISTS schedule (
+      `CREATE TABLE IF NOT EXISTS cliente (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            time TEXT NOT NULL DEFAULT '18:30'
+            time TEXT NOT NULL DEFAULT '18:30',
+            registred INTEGER NOT NULL DEFAULT 0,
+            poweroff INTEGER NOT NULL DEFAULT 1
         );`,
       (err) => {
         if (err) {
           logToFile.logToFile(`Erro ao criar a tabela: ${err}`);
         } else {
-          logToFile.logToFile('Tabela "schedule" criada com sucesso.');
+          db.run(`INSERT INTO cliente (time) VALUES ('18:30')`, [], (err)=> { 
+            if(err){ 
+              logToFile.logToFile("Erro ao programar desligamento " + err) 
+            }
+      
+            db.run('UPDATE cliente SET poweroff = 1', [], (err)=> { 
+              if(err){ 
+                logToFile.logToFile(err) 
+              }
+            })
+            logToFile.logToFile("Desligamento programado com sucesso") 
+          });
+          logToFile.logToFile('Tabela "cliente" criada com sucesso.');
         }
       }
     );
 
-    db.run(`INSERT INTO schedule (time) VALUES ('18:30')`);
-
+    
+    
   });
 };
 
 const updateSchedule = (newTime, res) => {
-  db.run(`UPDATE schedule SET time = ? WHERE id = 1`, [newTime], (err) => {
+  db.run(`UPDATE cliente SET time = ? WHERE id = 1`, [newTime], (err) => {
     if (err) {
       logToFile.logToFile(`Erro ao atualizar o horário: ${err.message}`);
       return res.status(500).json({ok: false, msg: err.message});
@@ -38,7 +52,7 @@ const updateSchedule = (newTime, res) => {
 
 const deleteFromSchedule = (id) => {
     db.serialize(() => {
-       return db.run(`DELETE FROM schedule WHERE id = ?`, [id], function(err) {
+       return db.run(`UPDATE cliente SET time = none WHERE id = ?`, [id], function(err) {
                 if (err) {
                     logToFile.logToFile("Erro ao deletar horário de desligamento: " + err)
                     return false
@@ -51,7 +65,7 @@ const deleteFromSchedule = (id) => {
 }
 
 const GetData = (callback) => {
-  db.get(`SELECT time FROM schedule WHERE id = 1`, (err, row) => {
+  db.get(`SELECT time FROM cliente WHERE id = 1`, (err, row) => {
     if (err) {
       logToFile.logToFile(`Erro ao consultar a tabela: ${err.message}`);
       return callback(err, null);
@@ -60,9 +74,20 @@ const GetData = (callback) => {
     }
   });
 };
+
+const UpdateRegistered = () => { 
+  db.run('UPDATE cliente SET registred = 1 WHERE id = 1', [], (err)=> { 
+    if(err){ 
+      logToFile.logToFile("Erro ao atualizar o estado de Registro" + err) 
+    }
+    logToFile.logToFile("Estado de registro atualizado com sucesso! ")
+  })
+}
+
 module.exports = {
   CreateTable,
   updateSchedule,
   GetData,
-  deleteFromSchedule
+  deleteFromSchedule,
+  UpdateRegistered
 };

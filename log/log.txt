@@ -1,2 +1,31 @@
-2024-10-07T19:55:40.506Z - Server rodando na porta 5001
-2024-10-07T19:55:40.530Z - Tabela "schedule" criada com sucesso.
+2024-10-08T20:27:31.693Z - Server rodando na porta 5001
+2024-10-08T20:27:31.725Z - Tabela "cliente" criada com sucesso.
+2024-10-08T20:27:31.730Z - Desligamento programado com sucesso
+2024-10-08T20:27:41.393Z - Dados enviados com sucesso:
+2024-10-08T20:27:41.398Z - Estado de registro atualizado com sucesso! 
+2024-10-08T20:28:31.697Z - Horário atual (17:28) ainda não atingiu o agendado (18:30).
+2024-10-08T20:29:31.709Z - Horário atual (17:29) ainda não atingiu o agendado (18:30).
+2024-10-08T20:30:08.997Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-08T20:30:09.000Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-08T20:30:09.000Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-08T20:30:09.001Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-08T20:30:09.001Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-08T20:30:09.001Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-08T20:30:09.002Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-08T20:30:09.002Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-08T20:30:09.003Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-08T20:30:09.003Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-08T20:30:09.003Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-08T20:30:09.004Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-08T20:30:09.004Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-08T20:30:09.005Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-08T20:30:09.005Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-08T20:30:31.714Z - Horário atual (17:30) ainda não atingiu o agendado (18:30).
+2024-10-08T20:31:31.727Z - Horário atual (17:31) ainda não atingiu o agendado (18:30).
+2024-10-08T20:31:53.392Z - Erro ao cancelar o shutdown: Command failed: shutdown -a
+N�o foi poss�vel anular o desligamento do sistema porque o sistema n�o estava sendo desligado.(1116)
+
+2024-10-08T20:31:53.395Z - Command failed: shutdown -a
+N�o foi poss�vel anular o desligamento do sistema porque o sistema n�o estava sendo desligado.(1116)
+
+2024-10-08T20:32:31.734Z - Horário atual (17:32) ainda não atingiu o agendado (18:30).

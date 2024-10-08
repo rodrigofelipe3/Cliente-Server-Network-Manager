@@ -7,7 +7,7 @@ function loadConfig() {
     try {
         const data = fs.readFileSync(configPath, 'utf8'); 
         const config = JSON.parse(data); 
-        
+        console.log(config.serverIp)
         return config.serverIp
     } catch (error) {
         console.error('Erro ao carregar o arquivo config.json:', error);
