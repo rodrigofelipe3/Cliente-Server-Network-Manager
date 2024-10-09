@@ -1,31 +1,530 @@
-2024-10-08T20:27:31.693Z - Server rodando na porta 5001
-2024-10-08T20:27:31.725Z - Tabela "cliente" criada com sucesso.
-2024-10-08T20:27:31.730Z - Desligamento programado com sucesso
-2024-10-08T20:27:41.393Z - Dados enviados com sucesso:
-2024-10-08T20:27:41.398Z - Estado de registro atualizado com sucesso! 
-2024-10-08T20:28:31.697Z - Horário atual (17:28) ainda não atingiu o agendado (18:30).
-2024-10-08T20:29:31.709Z - Horário atual (17:29) ainda não atingiu o agendado (18:30).
-2024-10-08T20:30:08.997Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-10-08T20:30:09.000Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-10-08T20:30:09.000Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-10-08T20:30:09.001Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-10-08T20:30:09.001Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-10-08T20:30:09.001Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-10-08T20:30:09.002Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-10-08T20:30:09.002Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-10-08T20:30:09.003Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-10-08T20:30:09.003Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-10-08T20:30:09.003Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-10-08T20:30:09.004Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-10-08T20:30:09.004Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-10-08T20:30:09.005Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-10-08T20:30:09.005Z - Erro ao enviar heartbeat: TypeError: fetch failed
-2024-10-08T20:30:31.714Z - Horário atual (17:30) ainda não atingiu o agendado (18:30).
-2024-10-08T20:31:31.727Z - Horário atual (17:31) ainda não atingiu o agendado (18:30).
-2024-10-08T20:31:53.392Z - Erro ao cancelar o shutdown: Command failed: shutdown -a
-N�o foi poss�vel anular o desligamento do sistema porque o sistema n�o estava sendo desligado.(1116)
-
-2024-10-08T20:31:53.395Z - Command failed: shutdown -a
-N�o foi poss�vel anular o desligamento do sistema porque o sistema n�o estava sendo desligado.(1116)
-
-2024-10-08T20:32:31.734Z - Horário atual (17:32) ainda não atingiu o agendado (18:30).
+2024-10-09T19:18:41.834Z - Tabela "cliente" criada com sucesso.
+2024-10-09T19:18:51.265Z - Erro ao coletar ou enviar dados:
+2024-10-09T19:18:51.342Z - Estado de registro atualizado com sucesso! 
+2024-10-09T19:19:41.814Z - Horário atual (16:19) ainda não atingiu o agendado (18:30).
+2024-10-09T19:20:41.815Z - Horário atual (16:20) ainda não atingiu o agendado (18:30).
+2024-10-09T19:21:41.816Z - Horário atual (16:21) ainda não atingiu o agendado (18:30).
+2024-10-09T19:22:41.818Z - Horário atual (16:22) ainda não atingiu o agendado (18:30).
+2024-10-09T19:23:41.822Z - Horário atual (16:23) ainda não atingiu o agendado (18:30).
+2024-10-09T19:23:53.028Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:24:03.103Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:24:13.159Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:24:23.246Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:24:33.347Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:24:41.833Z - Horário atual (16:24) ainda não atingiu o agendado (18:30).
+2024-10-09T19:24:43.452Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:24:53.552Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:25:02.627Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:25:12.722Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:25:22.822Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:25:32.917Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:25:41.842Z - Horário atual (16:25) ainda não atingiu o agendado (18:30).
+2024-10-09T19:25:43.011Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:25:53.108Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:26:03.209Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:26:13.299Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:26:23.403Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:26:33.480Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:26:41.849Z - Horário atual (16:26) ainda não atingiu o agendado (18:30).
+2024-10-09T19:26:43.561Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:26:53.652Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:27:02.757Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:27:12.845Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:27:22.942Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:27:33.044Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:27:41.849Z - Horário atual (16:27) ainda não atingiu o agendado (18:30).
+2024-10-09T19:27:43.131Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:27:53.207Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:28:03.294Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:28:13.364Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:28:23.473Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:28:33.547Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:28:41.860Z - Horário atual (16:28) ainda não atingiu o agendado (18:30).
+2024-10-09T19:28:43.628Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:28:53.718Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:29:02.807Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:29:12.867Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:29:22.968Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:29:33.062Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:29:41.870Z - Horário atual (16:29) ainda não atingiu o agendado (18:30).
+2024-10-09T19:29:43.163Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:29:53.245Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:30:03.331Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:30:13.438Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:30:23.508Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:30:33.590Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:30:41.870Z - Horário atual (16:30) ainda não atingiu o agendado (18:30).
+2024-10-09T19:30:43.657Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:30:53.748Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:31:02.812Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:31:12.894Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:31:22.978Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:31:33.075Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:31:41.875Z - Horário atual (16:31) ainda não atingiu o agendado (18:30).
+2024-10-09T19:31:43.182Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:31:53.275Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:32:03.340Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:32:13.425Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:32:23.491Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:32:33.600Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:32:41.880Z - Horário atual (16:32) ainda não atingiu o agendado (18:30).
+2024-10-09T19:32:43.691Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:32:53.775Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:03.864Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:12.972Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.051Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.053Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.053Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.053Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.054Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.053Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.054Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.054Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.054Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.056Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.057Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.057Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.057Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.057Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.057Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.057Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.058Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.058Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.058Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.058Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.058Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.058Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.058Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.059Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.058Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.059Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.061Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.060Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.061Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:21.061Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:24.627Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:41.883Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:41.884Z - Horário atual (16:33) ainda não atingiu o agendado (18:30).
+2024-10-09T19:33:44.401Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:33:57.678Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:34:07.208Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:34:14.651Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:34:41.899Z - Horário atual (16:34) ainda não atingiu o agendado (18:30).
+2024-10-09T19:35:41.902Z - Horário atual (16:35) ainda não atingiu o agendado (18:30).
+2024-10-09T19:36:41.913Z - Horário atual (16:36) ainda não atingiu o agendado (18:30).
+2024-10-09T19:37:41.924Z - Horário atual (16:37) ainda não atingiu o agendado (18:30).
+2024-10-09T19:38:37.102Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.102Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.103Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.103Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.104Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.104Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.105Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.105Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.105Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.108Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.108Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.109Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.109Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.109Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.109Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.109Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.110Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.109Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.110Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.110Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.110Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.110Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.111Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.110Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.112Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:37.112Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:41.934Z - Horário atual (16:38) ainda não atingiu o agendado (18:30).
+2024-10-09T19:38:45.104Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:38:56.570Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:39:05.722Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:39:17.727Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:39:28.454Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:39:35.314Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:39:41.940Z - Horário atual (16:39) ainda não atingiu o agendado (18:30).
+2024-10-09T19:39:44.956Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:39:58.666Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:40:05.231Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:40:13.405Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:40:31.877Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:40:35.484Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:40:41.955Z - Horário atual (16:40) ainda não atingiu o agendado (18:30).
+2024-10-09T19:40:44.069Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:40:55.003Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:41:41.955Z - Horário atual (16:41) ainda não atingiu o agendado (18:30).
+2024-10-09T19:41:49.784Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:41:49.784Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:41:49.784Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:41:49.785Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:41:49.785Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:41:56.874Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:42:14.652Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:42:14.652Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:42:23.740Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:42:41.428Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:42:41.959Z - Horário atual (16:42) ainda não atingiu o agendado (18:30).
+2024-10-09T19:43:32.028Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:43:32.027Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:43:32.028Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:43:32.029Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:43:32.029Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:43:41.971Z - Horário atual (16:43) ainda não atingiu o agendado (18:30).
+2024-10-09T19:43:52.727Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:43:52.728Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:43:56.933Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:44:04.258Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:44:15.879Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:44:27.608Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:44:35.160Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:44:41.985Z - Horário atual (16:44) ainda não atingiu o agendado (18:30).
+2024-10-09T19:44:48.749Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:44:55.184Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:45:05.190Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:45:15.219Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:45:25.231Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:45:35.231Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:45:41.997Z - Horário atual (16:45) ainda não atingiu o agendado (18:30).
+2024-10-09T19:45:45.241Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:45:55.250Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:46:05.266Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:46:42.009Z - Horário atual (16:46) ainda não atingiu o agendado (18:30).
+2024-10-09T19:46:43.951Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:46:43.952Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:46:43.951Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:46:43.951Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:46:56.040Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:47:13.653Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:47:13.653Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:47:27.651Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:47:33.449Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:47:42.022Z - Horário atual (16:47) ainda não atingiu o agendado (18:30).
+2024-10-09T19:47:50.965Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:47:58.746Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:48:42.023Z - Horário atual (16:48) ainda não atingiu o agendado (18:30).
+2024-10-09T19:49:42.036Z - Horário atual (16:49) ainda não atingiu o agendado (18:30).
+2024-10-09T19:50:00.963Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:50:00.963Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:50:00.964Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:50:00.964Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:50:00.964Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:50:00.965Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:50:00.966Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:50:00.966Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:50:00.966Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:50:00.965Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:50:00.966Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:50:00.966Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:50:05.673Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:50:36.293Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:50:36.294Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:50:36.294Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:50:42.053Z - Horário atual (16:50) ainda não atingiu o agendado (18:30).
+2024-10-09T19:51:42.062Z - Horário atual (16:51) ainda não atingiu o agendado (18:30).
+2024-10-09T19:52:42.072Z - Horário atual (16:52) ainda não atingiu o agendado (18:30).
+2024-10-09T19:53:42.075Z - Horário atual (16:53) ainda não atingiu o agendado (18:30).
+2024-10-09T19:54:42.089Z - Horário atual (16:54) ainda não atingiu o agendado (18:30).
+2024-10-09T19:55:14.485Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.486Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.486Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.486Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.489Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.489Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.489Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.490Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.489Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.489Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.490Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.490Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.490Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.490Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.490Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.490Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.492Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.492Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.492Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.492Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.493Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.493Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.493Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.493Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.493Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.493Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.493Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:14.493Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T19:55:42.089Z - Horário atual (16:55) ainda não atingiu o agendado (18:30).
+2024-10-09T19:56:42.101Z - Horário atual (16:56) ainda não atingiu o agendado (18:30).
+2024-10-09T19:57:42.112Z - Horário atual (16:57) ainda não atingiu o agendado (18:30).
+2024-10-09T19:58:42.123Z - Horário atual (16:58) ainda não atingiu o agendado (18:30).
+2024-10-09T19:59:42.133Z - Horário atual (16:59) ainda não atingiu o agendado (18:30).
+2024-10-09T20:00:24.917Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:00:33.995Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:00:42.146Z - Horário atual (17:0) ainda não atingiu o agendado (18:30).
+2024-10-09T20:00:44.102Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:00:54.181Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:01:04.243Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:01:14.339Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:01:24.447Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:01:34.555Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:01:42.158Z - Horário atual (17:1) ainda não atingiu o agendado (18:30).
+2024-10-09T20:01:44.666Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:01:54.779Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:02:04.868Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:02:13.959Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:02:24.042Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:02:34.120Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:02:42.163Z - Horário atual (17:2) ainda não atingiu o agendado (18:30).
+2024-10-09T20:02:44.213Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:02:54.313Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:03:04.437Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:03:14.541Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:03:24.669Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:03:34.790Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:03:42.169Z - Horário atual (17:3) ainda não atingiu o agendado (18:30).
+2024-10-09T20:03:44.893Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:03:54.983Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:04:05.095Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:04:15.190Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:04:25.306Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:04:35.383Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:04:42.173Z - Horário atual (17:4) ainda não atingiu o agendado (18:30).
+2024-10-09T20:04:45.480Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:04:55.554Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:05:05.661Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:05:15.781Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:05:25.861Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:05:34.924Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:05:42.187Z - Horário atual (17:5) ainda não atingiu o agendado (18:30).
+2024-10-09T20:05:45.036Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:05:55.108Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:06:05.200Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:06:15.266Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:06:25.375Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:06:35.489Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:06:42.189Z - Horário atual (17:6) ainda não atingiu o agendado (18:30).
+2024-10-09T20:06:45.578Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:06:55.683Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:05.766Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:15.854Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:25.936Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:35.012Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:42.191Z - Horário atual (17:7) ainda não atingiu o agendado (18:30).
+2024-10-09T20:07:45.089Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.500Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.500Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.501Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.500Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.502Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.502Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.508Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.508Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.509Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.510Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.511Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.511Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.512Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.512Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.513Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.513Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.513Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.516Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.516Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.516Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.516Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.516Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.516Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.515Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.517Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.517Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.519Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.519Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.519Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:07:50.519Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:08:42.204Z - Horário atual (17:8) ainda não atingiu o agendado (18:30).
+2024-10-09T20:09:42.213Z - Horário atual (17:9) ainda não atingiu o agendado (18:30).
+2024-10-09T20:10:42.227Z - Horário atual (17:10) ainda não atingiu o agendado (18:30).
+2024-10-09T20:11:42.236Z - Horário atual (17:11) ainda não atingiu o agendado (18:30).
+2024-10-09T20:12:42.242Z - Horário atual (17:12) ainda não atingiu o agendado (18:30).
+2024-10-09T20:12:56.026Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:13:05.113Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:13:15.213Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:13:25.305Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:13:35.410Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:13:42.246Z - Horário atual (17:13) ainda não atingiu o agendado (18:30).
+2024-10-09T20:13:45.487Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:13:55.576Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:14:05.655Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:14:15.745Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:14:25.850Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:14:35.936Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:14:42.260Z - Horário atual (17:14) ainda não atingiu o agendado (18:30).
+2024-10-09T20:14:46.042Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:14:56.124Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:15:05.205Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:15:15.297Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:15:25.395Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:15:35.474Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:15:42.263Z - Horário atual (17:15) ainda não atingiu o agendado (18:30).
+2024-10-09T20:15:45.585Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:15:55.679Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:16:05.767Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:16:15.884Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:16:25.978Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:16:36.050Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:16:42.263Z - Horário atual (17:16) ainda não atingiu o agendado (18:30).
+2024-10-09T20:16:46.122Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:16:56.182Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:17:06.252Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:17:15.334Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:17:25.410Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:17:35.494Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:17:42.277Z - Horário atual (17:17) ainda não atingiu o agendado (18:30).
+2024-10-09T20:17:45.581Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:17:55.645Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:18:05.754Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:18:15.840Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:18:25.916Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:18:35.993Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:18:42.281Z - Horário atual (17:18) ainda não atingiu o agendado (18:30).
+2024-10-09T20:18:46.080Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:18:56.182Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:19:06.274Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:19:15.343Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:19:25.436Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:19:35.536Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:19:42.286Z - Horário atual (17:19) ainda não atingiu o agendado (18:30).
+2024-10-09T20:19:45.615Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:19:55.707Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:20:05.773Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:20:15.844Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:20:25.920Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:20:36.000Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:20:42.299Z - Horário atual (17:20) ainda não atingiu o agendado (18:30).
+2024-10-09T20:20:46.093Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:20:56.205Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:21:06.282Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:21:15.350Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:21:25.451Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:21:35.543Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:21:42.300Z - Horário atual (17:21) ainda não atingiu o agendado (18:30).
+2024-10-09T20:21:45.597Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:21:55.684Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:22:05.777Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:22:15.870Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:22:25.967Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:22:36.045Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:22:42.312Z - Horário atual (17:22) ainda não atingiu o agendado (18:30).
+2024-10-09T20:22:46.131Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:22:56.212Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:23:06.307Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:23:16.399Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:23:26.485Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:23:35.580Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:23:42.325Z - Horário atual (17:23) ainda não atingiu o agendado (18:30).
+2024-10-09T20:23:45.678Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:23:55.769Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:24:05.839Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:24:15.928Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:24:26.035Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:24:36.153Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:24:42.340Z - Horário atual (17:24) ainda não atingiu o agendado (18:30).
+2024-10-09T20:24:46.259Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:24:56.372Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:25:06.475Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:25:16.580Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:25:26.686Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:25:36.755Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:25:42.342Z - Horário atual (17:25) ainda não atingiu o agendado (18:30).
+2024-10-09T20:25:45.839Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:25:55.934Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:26:06.032Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:26:16.092Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:26:26.179Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:26:36.277Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:26:42.346Z - Horário atual (17:26) ainda não atingiu o agendado (18:30).
+2024-10-09T20:26:46.381Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:26:56.473Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:27:06.560Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:27:16.621Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:27:26.717Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:27:36.783Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:27:42.360Z - Horário atual (17:27) ainda não atingiu o agendado (18:30).
+2024-10-09T20:27:46.865Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:27:56.958Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:28:06.027Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:28:16.107Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:28:26.187Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:28:36.282Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:28:42.371Z - Horário atual (17:28) ainda não atingiu o agendado (18:30).
+2024-10-09T20:28:46.364Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:28:56.431Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:29:06.533Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:29:16.626Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:29:26.690Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:29:36.765Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:29:42.382Z - Horário atual (17:29) ainda não atingiu o agendado (18:30).
+2024-10-09T20:29:46.847Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:29:55.909Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:30:06.007Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:30:16.097Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:30:26.173Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:30:36.262Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:30:42.389Z - Horário atual (17:30) ainda não atingiu o agendado (18:30).
+2024-10-09T20:30:46.351Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:30:56.455Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:31:06.543Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:31:16.633Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:31:26.718Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:31:36.815Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:31:42.403Z - Horário atual (17:31) ainda não atingiu o agendado (18:30).
+2024-10-09T20:31:46.897Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:31:55.968Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:32:06.041Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:32:16.161Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:32:26.252Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:32:36.341Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:32:42.409Z - Horário atual (17:32) ainda não atingiu o agendado (18:30).
+2024-10-09T20:32:46.403Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:32:56.490Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:06.593Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:16.674Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:26.748Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.153Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.150Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.155Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.155Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.154Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.155Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.155Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.154Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.154Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.158Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.158Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.159Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.159Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.159Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.159Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.160Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.160Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.160Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.159Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.160Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.161Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.161Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.161Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.161Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.161Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.163Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.160Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.164Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.160Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.163Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:36.164Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:42.423Z - Horário atual (17:33) ainda não atingiu o agendado (18:30).
+2024-10-09T20:33:47.821Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:33:57.824Z - Erro ao enviar heartbeat: TypeError: fetch failed
+2024-10-09T20:34:07.851Z - Erro ao enviar heartbeat: TypeError: fetch failed

@@ -5,7 +5,7 @@ const cors = require("cors")
 const checkShutdownTime = require("./src/utils/scheduleShutdown")
 const logToFile = require("./src/utils/logToFile")
 const sendComputerInfo = require("./src/controllers/sendComputerinfo")
-const  {CreateTable} = require("./src/database/database")
+const  {CreateTable, isRegistred} = require("./src/database/database")
 const app = express()
 
 
@@ -17,6 +17,13 @@ app.use(cors())
 app.use(express.json())
 app.use("/api", route)
 //###########FUNÇÕES
+/*isRegistred((err, rows)=>{ 
+    if(err){ 
+        console.log(err)
+    }else { 
+        console.log(rows)
+    }
+})*/
 CreateTable()
 sendComputerInfo()
 setInterval(sendHeartbeat, 10000);

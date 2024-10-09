@@ -79,7 +79,6 @@ const sendProcessInfo = async () => {
             system: systemStats,
             processes: processList
         }
-        console.log(computerData)
         logToFile.logToFile('Dados enviados com sucesso');
         
         return computerData

@@ -14,7 +14,6 @@ const sendHeartbeat = async () => {
         "Content-Type":"application/json"
       }
     });
-    console.log(server)
     if(response.status == 200){ 
       logToFile.logToFile("HeartBeat enviado com sucesso!")
     }else  { 
