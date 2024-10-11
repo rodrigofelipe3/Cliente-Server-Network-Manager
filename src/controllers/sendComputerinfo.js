@@ -5,6 +5,7 @@ const { loadConfig } = require('../../loadConfig');
 const { UpdateRegister, isRegistred } = require('../database/database');
 
 const sendComputerInfo = async (ip) => {
+
     try {
         const cpu = await si.cpu();
         const mem = await si.mem();

@@ -10,8 +10,8 @@ async function getSystemStats() {
     const mem = await si.mem();
   
     return {
-      cpuUsage: cpu.currentLoad.toFixed(2), // uso do processador em %
-      memoryUsage: ((mem.used / mem.total) * 100).toFixed(2), // uso de memória em %
+      cpuUsage: cpu.currentLoad.toFixed(2), 
+      memoryUsage: ((mem.used / mem.total) * 100).toFixed(2), 
     };
   }
 

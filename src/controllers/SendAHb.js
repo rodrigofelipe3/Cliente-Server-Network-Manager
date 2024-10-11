@@ -1,7 +1,6 @@
 const os = require('os');
 const logToFile = require('../utils/logToFile');
 const { loadConfig } = require('../../loadConfig');
-
 const hostname = os.hostname();
 
 

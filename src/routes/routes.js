@@ -1,5 +1,5 @@
 const express = require("express");
-const Shutdown0 = require("../controllers/Shutdown");
+const {Shutdown0, Restart} = require("../controllers/Shutdown");
 const { updateSchedule, deleteFromSchedule } = require("../database/database");
 const logToFile = require("../utils/logToFile");
 const {sendProcessInfo, sendProcessInfoByMemory} = require("../controllers/sendProcessInfo");
@@ -22,10 +22,22 @@ router.post('/shutdown', async (req, res) => {
 });
 
 router.post('/shutdown/now', async (req, res) => {  
-    console.log("COMANDO RECEBIDO!")
     const seconds = 10
     try { 
         const response = await Shutdown0( seconds)
+        if(response.ok == true) { 
+            return res.status(200).json({ok: true, msg: response.msg})
+        }else { 
+            return res.status(200).json({ok: true, error: response.error})
+        }
+    }catch(err){ 
+        return res.status(500).json({ok: false, error: "Erro interno" + err})
+    }
+});
+
+router.post('/restart/now', async (req, res) => {  
+    try { 
+        const response = await Restart()
         if(response.ok == true) { 
             return res.status(200).json({ok: true, msg: response.msg})
         }else { 

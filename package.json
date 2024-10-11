@@ -8,21 +8,18 @@
   "pkg": {
     "assets": [
       "src/**/*",
-      "node_modules/**/*",
-      "controllers/*",
-      "database/*",
-      "routes/*",
-      "utils/*"
+      "node_modules/**/*"
     ],
     "scripts": "app.js",
     "targets": [
-      "node18-win-x64"
+      "node16-win-x64"
     ]
   },
   "dependencies": {
     "cors": "^2.8.5",
     "electron": "^32.1.1",
     "express": "^4.21.0",
+    "node-fetch": "^2.7.0",
     "node-gyp": "^10.2.0",
     "nodemon": "^3.1.4",
     "pidusage": "^3.0.2",
