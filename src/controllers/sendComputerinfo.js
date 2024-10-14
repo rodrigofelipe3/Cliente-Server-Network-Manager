@@ -12,20 +12,25 @@ const sendComputerInfo = async (ip) => {
     const networkInterfaces = await si.networkInterfaces();
     const diskData = await si.diskLayout();
     const storageDevices = diskData.map((disk) => {
-      const sizeGB = (disk.size / 1024 ** 3).toFixed(0); // Tamanho em GB
       return `${disk.name} `; // Exemplo: "X15 Lite SSD 256GB"
     });
 
     const graphicsData = await si.graphics();
-    const monitors = graphicsData.displays.map((display, index) => {
-      return `Tela ${index + 1}: ${display.model} (${display.resolutionx}x${display.resolutiony})`;
-    });
-    
+    const displays = graphicsData.displays;
+
+        // Mapeia as informações para formatar a resolução de cada monitor
+        const monitorInfo = displays.map((display, index) => {
+            const resolution = `${display.resolutionX}x${display.resolutionY}`;
+            return `Tela ${index + 1}: ${resolution}`;
+        });
+    const adaptadoresRemover = ['Loopback Pseudo-Interface 1', 'Hyper-V Virtual Ethernet Adapter'];
     const ipv4 = networkInterfaces.find((net) => net.ip4 !== undefined)?.ip4 || "N/A";
     const macAddress = networkInterfaces.find((net) => net.mac !== undefined)?.mac || "N/A";
     const host = os.hostname();
-    const networkDevices = networkInterfaces.map((net) => net.iface).join(", ");
-
+    const networkDevices = networkInterfaces.map((net) => net.ifaceName).join(" , ")
+    const filtredDevices = networkDevices.split(" , ")
+    
+    
     const server = loadConfig();
 
     isRegistred(async (err, row) => {
@@ -45,10 +50,10 @@ const sendComputerInfo = async (ip) => {
         ip: ipv4,
         mac_address: macAddress,
         host: host,
-        network_devices: networkDevices,
+        network_devices: filtredDevices.filter(data => !adaptadoresRemover.includes(data)),
         poweroff: poweroff,
         poweroffhour: poweroffhour,
-        monitors: monitors
+        monitors: monitorInfo
       };
       console.log(computerData);
       const response = await fetch(

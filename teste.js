@@ -1,49 +1,20 @@
-const { exec } = require('child_process');
+function filtrarAdaptadores(adaptadores) {
+  // Lista de adaptadores a serem removidos
+  const adaptadoresRemover = ['Loopback Pseudo-Interface 1', 'Hyper-V Virtual Ethernet Adapter'];
 
-const getMonitorInfo = () => {
-  return new Promise((resolve, reject) => {
-    exec('powershell -Command "Get-CimInstance -ClassName Win32_DesktopMonitor | Select-Object Caption, PNPDeviceID, ScreenWidth, ScreenHeight"', (error, stdout, stderr) => {
-      if (error) {
-        reject(`Erro ao executar PowerShell: ${error.message}`);
-        return;
-      }
+  // Transforma a string de adaptadores em um array
+  let adaptadoresArray = adaptadores.split(', ');
 
-      if (stderr) {
-        reject(`Erro no PowerShell: ${stderr}`);
-        return;
-      }
+  // Filtra o array, removendo os adaptadores indesejados
+  let adaptadoresFiltrados = adaptadoresArray.filter(adaptador => !adaptadoresRemover.includes(adaptador));
 
-      // Processa a saída do PowerShell
-      const lines = stdout.split('\n').filter(line => line.trim() !== ''); // Remove linhas vazias
-      const monitors = [];
+  // Junta o array filtrado de volta para uma string
+  return adaptadoresFiltrados.join(', ');
+}
 
-      // Ignora a primeira linha (cabeçalhos)
-      lines.slice(1).forEach(line => {
-        const [caption, pnpDeviceID, screenWidth, screenHeight] = line.trim().split(/\s{2,}/); // Divide por múltiplos espaços
-        monitors.push({
-          Nome: caption || "Desconhecido",
-          ID: pnpDeviceID || "Desconhecido",
-          Resolução: `${screenWidth || "Desconhecida"}x${screenHeight || "Desconhecida"}`
-        });
-      });
+// Exemplo de adaptadores recebidos
+const todosAdaptadores = 'Realtek PCIe GbE Family Controller, Loopback Pseudo-Interface 1, Hyper-V Virtual Ethernet Adapter, Killer Wireless-n/a/ac 1535 Wireless Network Adapter';
 
-      resolve(monitors);
-    });
-  });
-};
-
-// Exemplo de uso
-getMonitorInfo()
-  .then(monitors => {
-    console.log("Monitores Conectados:");
-    monitors.forEach((monitor, index) => {
-      console.log(`Monitor ${index + 1}:`);
-      console.log(`  Nome: ${monitor.Nome}`);
-      console.log(`  ID: ${monitor.ID}`);
-      console.log(`  Resolução: ${monitor.Resolução}`);
-      console.log('');
-    });
-  })
-  .catch(error => {
-    console.error("Erro:", error);
-  });
+// Chama a função para filtrar os adaptadores
+const adaptadoresFiltrados = filtrarAdaptadores(todosAdaptadores);
+console.log(adaptadoresFiltrados);
