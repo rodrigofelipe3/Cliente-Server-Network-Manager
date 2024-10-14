@@ -16,18 +16,10 @@ const PORT = 5001
 app.use(cors())
 app.use(express.json())
 app.use("/api", route)
-//###########FUNÇÕES
-/*isRegistred((err, rows)=>{ 
-    if(err){ 
-        console.log(err)
-    }else { 
-        console.log(rows)
-    }
-})*/
 CreateTable()
 sendComputerInfo()
 setInterval(sendHeartbeat, 10000);
-setInterval(checkShutdownTime, 60000);
+//setInterval(checkShutdownTime, 60000); ##Função que checa o horário e desliga o computador
 
 //#########INICIANDO O SERVIDOR
 app.listen(PORT, ()=> { 

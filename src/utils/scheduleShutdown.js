@@ -1,4 +1,4 @@
-const Shutdown0 = require('../controllers/Shutdown');
+const {Shutdown0} = require('../controllers/Shutdown');
 const { GetData } = require('../database/database');
 const {logToFile} = require('./logToFile');
 
@@ -13,7 +13,7 @@ const checkShutdownTime = () => {
 
             if (currentHours > scheduledHours || (currentHours === scheduledHours && currentMinutes >= scheduledMinutes)) {
                 logToFile('Horário agendado alcançado, iniciando shutdown.');
-                Shutdown0();
+                Shutdown0(3600);
             } else {
                 logToFile(`Horário atual (${currentHours}:${currentMinutes}) ainda não atingiu o agendado (${scheduledHours}:${scheduledMinutes}).`);
             }
