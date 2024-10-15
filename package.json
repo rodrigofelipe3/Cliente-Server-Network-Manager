@@ -28,6 +28,8 @@
     "socket.io": "^4.8.0",
     "socket.io-client": "^4.8.0",
     "sqlite3": "^5.1.7",
-    "systeminformation": "^5.23.5"
+    "sudo-prompt": "^9.2.1",
+    "systeminformation": "^5.23.5",
+    "windows-elevate": "^1.0.1"
   }
 }
