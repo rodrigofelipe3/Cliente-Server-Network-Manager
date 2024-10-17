@@ -3,6 +3,7 @@ const os = require("os"); // Importa a biblioteca os
 const logToFile = require("../utils/logToFile");
 const { loadConfig } = require("../../loadConfig");
 const { UpdateRegister, isRegistred } = require("../database/database");
+const fetch = require("node-fetch")
 
 const sendComputerInfo = async (ip) => {
   try {
@@ -12,13 +13,11 @@ const sendComputerInfo = async (ip) => {
     const networkInterfaces = await si.networkInterfaces();
     const diskData = await si.diskLayout();
     const storageDevices = diskData.map((disk) => {
-      return `${disk.name} `; // Exemplo: "X15 Lite SSD 256GB"
+      return `${disk.name} `; 
     });
 
     const graphicsData = await si.graphics();
     const displays = graphicsData.displays;
-
-        // Mapeia as informações para formatar a resolução de cada monitor
         const monitorInfo = displays.map((display, index) => {
             const resolution = `${display.resolutionX}x${display.resolutionY}`;
             return `Tela ${index + 1}: ${resolution}`;
@@ -73,9 +72,12 @@ const sendComputerInfo = async (ip) => {
           } else {
             logToFile.logToFile("Erro no fetch ao atualizar estado");
           }
-        });
+        }).catch((err)=> { 
+          logToFile.logToFile("Erro no Fetch (sendInfoCOmputer): " + err)
+        })
+        logToFile.logToFile("Dados enviados com sucesso:", response);
     });
-    logToFile.logToFile("Dados enviados com sucesso:", response);
+    
   } catch (error) {
     logToFile.logToFile("Erro ao coletar ou enviar dados:", error);
   }

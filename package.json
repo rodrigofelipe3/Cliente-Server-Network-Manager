@@ -1,5 +1,5 @@
 {
-  "name": "Cliente Server",
+  "name": "ClienteServer",
   "version": "1.0.0",
   "bin": "app.js",
   "scripts": {
@@ -7,8 +7,21 @@
   },
   "pkg": {
     "assets": [
-      "src/**/*",
-      "node_modules/**/*"
+      "./src/**/*",
+      "C:/Users/Setor Administrativo/Documents/Cliente-Server-Network-Manager/node_modules/**/*",
+      "./loadConfig.js",
+      "./src/controllers/CancelShutdown.js",
+      "./src/controllers/Shutdown.js",
+      "./src/controllers/CMDCommand.js",
+      "./src/controllers/SendAHb.js",
+      "./src/controllers/sendComputerinfo.js",
+      "./src/controllers/sendProcessInfo.js",
+      "./src/controllers/Taskkill.js",
+      "./src/database/database.js",
+      "./src/routes/routes.js",
+      "./src/utils/logToFile.js",
+      "./src/utils/scheduleShutdown.js",  
+      "./node_modules/**/*"
     ],
     "scripts": "app.js",
     "targets": [

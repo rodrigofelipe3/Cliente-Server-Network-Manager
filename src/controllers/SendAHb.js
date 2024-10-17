@@ -2,9 +2,10 @@ const os = require('os');
 const logToFile = require('../utils/logToFile');
 const { loadConfig } = require('../../loadConfig');
 const hostname = os.hostname();
-
+const fetch = require("node-fetch")
 
 const sendHeartbeat = async () => {
+  
   const server = loadConfig()
   try {
     const response = await fetch(`http://${server}:5000/api/heartbeat/${hostname}`,{ 

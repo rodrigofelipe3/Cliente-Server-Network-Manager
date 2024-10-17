@@ -5,7 +5,7 @@ const cors = require("cors")
 const checkShutdownTime = require("./src/utils/scheduleShutdown")
 const logToFile = require("./src/utils/logToFile")
 const sendComputerInfo = require("./src/controllers/sendComputerinfo")
-const  {CreateTable, isRegistred} = require("./src/database/database")
+const  {CreateDatabase} = require("./src/database/database")
 const app = express()
 
 
@@ -16,10 +16,10 @@ const PORT = 5001
 app.use(cors())
 app.use(express.json())
 app.use("/api", route)
-CreateTable()
+CreateDatabase()
 sendComputerInfo()
 setInterval(sendHeartbeat, 10000);
-//setInterval(checkShutdownTime, 60000); ##Função que checa o horário e desliga o computador
+setInterval(checkShutdownTime, 60000); 
 
 //#########INICIANDO O SERVIDOR
 app.listen(PORT, ()=> { 
