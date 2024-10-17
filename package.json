@@ -20,7 +20,7 @@
       "./src/database/database.js",
       "./src/routes/routes.js",
       "./src/utils/logToFile.js",
-      "./src/utils/scheduleShutdown.js",  
+      "./src/utils/scheduleShutdown.js",
       "./node_modules/**/*"
     ],
     "scripts": "app.js",
@@ -43,6 +43,7 @@
     "sqlite3": "^5.1.7",
     "sudo-prompt": "^9.2.1",
     "systeminformation": "^5.23.5",
-    "windows-elevate": "^1.0.1"
+    "windows-elevate": "^1.0.1",
+    "ws": "^8.18.0"
   }
 }

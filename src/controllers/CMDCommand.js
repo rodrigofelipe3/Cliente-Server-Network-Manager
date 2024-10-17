@@ -1,47 +1,76 @@
 const { spawn } = require('child_process');
-const {logToFile} = require("../utils/logToFile");
+const { logToFile } = require("../utils/logToFile");
 const { loadConfig } = require('../../loadConfig');
+const WebSocket = require("ws")
+const server = loadConfig()
+
+const ws = new WebSocket.Server({ port: 5002 })
 
 const ChkDsk = async () => {
-    const cmdProcess = spawn('cmd', ['/c', 'chkdsk /f']);
-    const server = loadConfig()
+  
+
+  ws.on('connection', (ws) => {
+
+    console.log('Conectado ao servidor WebSocket do administrador.');
+    const cmdProcess = spawn('cmd', ['/c', 'chkdsk /f ']);
+
     cmdProcess.stdout.on('data', (data) => {
-     if (data.toString().includes("(S/N)") || data.toString().includes("Sim/Não")) {
-        cmdProcess.stdin.write('S\n');
-      }
+      console.log(data.toString())
+      ws.send(JSON.stringify(data.toString()))
     });
+
     cmdProcess.stderr.on('data', (data) => {
-        logToFile(`Erro: ${data.toString()}`);
-        return ({ok: false, error: data})
+      logToFile(`Erro: ${data.toString()}`);
+      ws.send(JSON.stringify(data.toString()))
     });
+
     cmdProcess.on('close', (code) => {
       logToFile(`Processo finalizado com código ${code}`);
-      return({ok: true, msg: code})
+      ws.send(JSON.stringify(code.toString()));
     });
- 
 
+  })
+  ws.on('error', (error) => {
+    console.error('Erro na conexão WebSocket:', error);
+  });
+  ws.on('close', (ws)=> { 
+    ws.send("close")
+  })
 }
 
 const SystemFileCheck = () => {
-  return new Promise((resolve, reject) => {
-    const cmdProcess = spawn('cmd', ['/c', 'sfc /scannow']);
-
+  
+  ws.on('connection', (ws) => {
+    const cmdProcess = spawn('cmd', ['sfc', '/scannow']);
+    console.log('Conectado ao servidor WebSocket do administrador.');
+    
+    console.log("cmdProcess: " + cmdProcess.toString())
     cmdProcess.stdout.on('data', (data) => {
-        resolve({ok: true, msg: data })
+      ws.send(JSON.stringify(data.toString()))
     });
 
     cmdProcess.stderr.on('data', (data) => {
-        logToFile(`Erro: ${data.toString()}`);
-        resolve({ok: false, error: data})
+      logToFile(`Erro: ${data.toString()}`);
+      console.log(data.toString())
+      ws.send(JSON.stringify(data.toString()))
     });
 
     cmdProcess.on('close', (code) => {
-      logToFile(`Processo finalizado com código ${code}`);
-      resolve({ok: false, error: data})
+      logToFile(`Processo finalizado com código ${code.toString()}`);
+      console.log(code)
+      ws.send(JSON.stringify(code.toString()));
     });
+
+  })
+  ws.on('error', (error) => {
+    console.error('Erro na conexão WebSocket:', error);
+  });
+  ws.on('close', (ws)=> { 
+    ws.send('close')
   })
 
 }
 
+ChkDsk()
 
-module.exports = { ChkDsk, SystemFileCheck}
+module.exports = { SystemFileCheck }
