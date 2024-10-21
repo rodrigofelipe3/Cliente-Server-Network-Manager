@@ -46,13 +46,13 @@ const sendComputerInfo = async (ip) => {
         operating_system: osInfo.distro,
         arch: osInfo.arch,
         release: osInfo.release,
+        monitors: monitorInfo,
         ip: ipv4,
         mac_address: macAddress,
         host: host,
         network_devices: filtredDevices.filter(data => !adaptadoresRemover.includes(data)),
         poweroff: poweroff,
-        poweroffhour: poweroffhour,
-        monitors: monitorInfo
+        poweroffhour: poweroffhour
       };
       console.log(computerData);
       const response = await fetch(
