@@ -2,49 +2,50 @@ const { spawn } = require('child_process');
 const { logToFile } = require("../utils/logToFile");
 const { loadConfig } = require('../../loadConfig');
 const WebSocket = require("ws")
-const server = loadConfig()
+const sudo = requrie('sudo-prompt')
 
 const ws = new WebSocket.Server({ port: 5002 })
 
 const ChkDsk = async () => {
   
-
-  ws.on('connection', (ws) => {
-
-    console.log('Conectado ao servidor WebSocket do administrador.');
-    const cmdProcess = spawn('cmd', ['/c', 'chkdsk /f ']);
-
-    cmdProcess.stdout.on('data', (data) => {
-      console.log(data.toString())
-      ws.send(JSON.stringify(data.toString()))
+    sudo.exec('chkdsk /f', (error, stdout, stderr) => {
+      if (error) {
+        ws.on('connection', (ws) => {
+          console.log('Conectado ao servidor WebSocket do administrador.');
+          ws.send(error.toString('utf-8'))
+        })
+        ws.on('close', (ws)=> { 
+          ws.send("close")
+        })
+      }
+      if (stderr) {
+        ws.on('connection', (ws) => {
+          console.log('Conectado ao servidor WebSocket do administrador.');
+          ws.send(stderr.toString('utf-8'))
+        })
+        ws.on('close', (ws)=> { 
+          ws.send("close")
+        })
+      }
+      ws.on('connection', (ws) => {
+        console.log('Conectado ao servidor WebSocket do administrador.');
+        ws.send(stdout.toString('utf-8'))
+      })
+      ws.on('close', (ws)=> { 
+        ws.send("close")
+      })
     });
 
-    cmdProcess.stderr.on('data', (data) => {
-      logToFile(`Erro: ${data.toString()}`);
-      ws.send(JSON.stringify(data.toString()))
-    });
-
-    cmdProcess.on('close', (code) => {
-      logToFile(`Processo finalizado com código ${code}`);
-      ws.send(JSON.stringify(code.toString()));
-    });
-
-  })
-  ws.on('error', (error) => {
-    console.error('Erro na conexão WebSocket:', error);
-  });
-  ws.on('close', (ws)=> { 
-    ws.send("close")
-  })
 }
 
 const SystemFileCheck = () => {
-  
+  console.log("Executando SFC")
   ws.on('connection', (ws) => {
-    const cmdProcess = spawn('cmd', ['sfc', '/scannow']);
+    const cmdProcess = spawn('cmd', ['/k' , 'sfc', '/scannow']);
     console.log('Conectado ao servidor WebSocket do administrador.');
     
     cmdProcess.stdout.on('data', (data) => {
+      console.log(data.toString())
       ws.send(JSON.stringify(data.toString()))
     });
 
@@ -65,6 +66,7 @@ const SystemFileCheck = () => {
     console.error('Erro na conexão WebSocket:', error);
   });
   ws.on('close', (ws)=> { 
+    console.log("Fechando WEB_SOCKET")
     ws.send('close')
   })
 
@@ -73,7 +75,7 @@ const SystemFileCheck = () => {
 const ScanHealth = () => {
   
   ws.on('connection', (ws) => {
-    const cmdProcess = spawn('cmd', ['sfc', 'dism', '/online', '/cleanup-image', '/scanhealth']);
+    const cmdProcess = spawn('dism', ['/online', '/cleanup-image', '/scanhealth']);
     console.log('Conectado ao servidor WebSocket do administrador.');
     
     cmdProcess.stdout.on('data', (data) => {
@@ -97,6 +99,7 @@ const ScanHealth = () => {
     console.error('Erro na conexão WebSocket:', error);
   });
   ws.on('close', (ws)=> { 
+    console.log("Websocket Fechado")
     ws.send('close')
   })
 
@@ -105,7 +108,7 @@ const ScanHealth = () => {
 const checkHealth = () => {
   
   ws.on('connection', (ws) => {
-    const cmdProcess = spawn('cmd', ['sfc', 'dism', '/online', '/cleanup-image', '/checkhealth']);
+    const cmdProcess = spawn( 'dism',[ '/online', '/cleanup-image', '/checkhealth']);
     console.log('Conectado ao servidor WebSocket do administrador.');
     
     cmdProcess.stdout.on('data', (data) => {
@@ -129,6 +132,7 @@ const checkHealth = () => {
     console.error('Erro na conexão WebSocket:', error);
   });
   ws.on('close', (ws)=> { 
+    console.log("Websocket Fechado")
     ws.send('close')
   })
 
@@ -137,7 +141,7 @@ const checkHealth = () => {
 const RestoreHealth = () => {
   
   ws.on('connection', (ws) => {
-    const cmdProcess = spawn('cmd', ['sfc', 'dism', '/online', '/cleanup-image', '/restorehealth']);
+    const cmdProcess = spawn('dism', [ '/online', '/cleanup-image', '/restorehealth']);
     console.log('Conectado ao servidor WebSocket do administrador.');
     
     cmdProcess.stdout.on('data', (data) => {
@@ -161,6 +165,7 @@ const RestoreHealth = () => {
     console.error('Erro na conexão WebSocket:', error);
   });
   ws.on('close', (ws)=> { 
+    console.log("Websocket Fechado")
     ws.send('close')
   })
 

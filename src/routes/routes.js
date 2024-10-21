@@ -12,23 +12,23 @@ const router = express.Router()
 
 router.post('/cmdcommand', (req, res)=>{ 
     const {type} = req.body
-    console.log(type)
-    try{ 
+    try{
         if(type == "sfc"){ 
             SystemFileCheck()
-        }if(type = 'chkdsk'){ 
+        }if(type == 'chkdsk'){ 
             ChkDsk()
-        }if(type = 'checkhealth'){ 
+        }if(type == 'checkhealth'){ 
             checkHealth()
-        }if(type = 'scanhealth'){ 
+        }if(type == 'scanhealth'){ 
             ScanHealth()
-        }if(type = 'restorehealth'){ 
+        }if(type == 'restorehealth'){ 
             RestoreHealth()
         }
         return res.status(200).json({ok: true})
     }catch(err){ 
         return res.status(500).json({ok: false, error: err})
     }
+       
 })
 
 
