@@ -4,38 +4,38 @@ const sudo = require('sudo-prompt')
 
 const ws = new WebSocket.Server({ port: 5002 })
 
+const CloseAllConnections = () => { 
+  ws.clients.foreach(client => { 
+    if(client.readState === WebSocket.OPEN) { 
+      client.close()
+    }
+  })
+}
+
+
+
 const ChkDsk = async () => {
   ws.on('connection', (ws) => {
     console.log('Conectado ao servidor WebSocket do administrador.');
     sudo.exec('sfc /scannow', { name: 'sfc' }, (error, stdout, stderr) => {
       if (stderr) {
         ws.send(stderr.toString('utf-8'))
-        ws.on('close', ()=> { 
-          ws.send('close')
-          console.log('Fechando conexão')
-          ws.close()
-        })
+        ws.close()
       }
       if (stdout) {
 
         ws.send(stdout.toString('utf-8'))
-        ws.on('close', ()=> { 
-          console.log('Fechando conexão')
-          ws.send('close')
-          ws.close()
-        })
+        ws.close()
       }
       if(error){ 
         ws.send(error.toString('utf-8'))
-        ws.on('close', ()=> { 
-          console.log('Fechando conexão')
-          ws.send('close')
-          ws.close()
-        })
+        ws.close()
       }
     })
   })
-  
+  ws.on('close', ()=> { 
+    ws.close()
+  })
 
 }
 
@@ -45,32 +45,22 @@ const SystemFileCheck = () => {
     sudo.exec('sfc /scannow', { name: 'sfc' }, (error, stdout, stderr) => {
       if (stderr) {
         ws.send(stderr.toString('utf-8'))
-        ws.on('close', ()=> { 
-          ws.send('close')
-          console.log('Fechando conexão')
-          ws.close()
-        })
+        ws.close()
       }
       if (stdout) {
 
         ws.send(stdout.toString('utf-8'))
-        ws.on('close', ()=> { 
-          console.log('Fechando conexão')
-          ws.send('close')
-          ws.close()
-        })
+        ws.close()
       }
       if(error){ 
         ws.send(error.toString('utf-8'))
-        ws.on('close', ()=> { 
-          console.log('Fechando conexão')
-          ws.send('close')
-          ws.close()
-        })
+        ws.close()
       }
     })
   })
-   
+  ws.on('close', ()=> { 
+    ws.close()
+  })
 }
 
 const ScanHealth = () => {
@@ -79,32 +69,21 @@ const ScanHealth = () => {
     sudo.exec('dism /online /cleanup-image /scanhealth', { name: 'checkhealth' }, (error, stdout, stderr) => {
       if (stderr) {
         ws.send(stderr.toString('utf-8'))
-        ws.on('close', ()=> { 
-          ws.send('close')
-          console.log('Fechando conexão')
-          ws.close()
-        })
+        ws.close()
       }
       if (stdout) {
-
         ws.send(stdout.toString('utf-8'))
-        ws.on('close', ()=> { 
-          console.log('Fechando conexão')
-          ws.send('close')
-          ws.close()
-        })
+        ws.close()
       }
       if(error){ 
         ws.send(error.toString('utf-8'))
-        ws.on('close', ()=> { 
-          console.log('Fechando conexão')
-          ws.send('close')
-          ws.close()
-        })
+        ws.close()
       }
     })
   })
-
+  ws.on('close', ()=> { 
+    ws.close()
+  })
 }
 
 const checkHealth = () => {
@@ -114,32 +93,21 @@ const checkHealth = () => {
     sudo.exec('dism /online /cleanup-image /checkhealth', { name: 'checkhealth' }, (error, stdout, stderr) => {
       if (stderr) {
         ws.send(stderr.toString('utf-8'))
-        ws.on('close', ()=> { 
-          ws.send('close')
-          console.log('Fechando conexão')
-          ws.close()
-        })
+        ws.close()
       }
       if (stdout) {
-
         ws.send(stdout.toString('utf-8'))
-        ws.on('close', ()=> { 
-          console.log('Fechando conexão')
-          ws.send('close')
-          ws.close()
-        })
+        ws.close()
       }
       if(error){ 
         ws.send(error.toString('utf-8'))
-        ws.on('close', ()=> { 
-          console.log('Fechando conexão')
-          ws.send('close')
-          ws.close()
-        })
+        ws.close()
       }
     })
   })
-  
+  ws.on('close', ()=> { 
+    ws.close()
+  })
 
 }
 
@@ -150,33 +118,29 @@ const RestoreHealth = () => {
     sudo.exec('dism /online /cleanup-image /restorehealth', { name: 'restorehealth' }, (error, stdout, stderr) => {
       if (stderr) {
         ws.send(stderr.toString('utf-8'))
-        ws.on('close', ()=> { 
-          ws.send('close')
-          console.log('Fechando conexão')
-          ws.close()
-        })
+        ws.close()
       }
       if (stdout) {
-
         ws.send(stdout.toString('utf-8'))
-        ws.on('close', ()=> { 
-          console.log('Fechando conexão')
-          ws.send('close')
-          ws.close()
-        })
+        ws.close()
       }
       if(error){ 
         ws.send(error.toString('utf-8'))
-        ws.on('close', ()=> { 
-          console.log('Fechando conexão')
-          ws.send('close')
-          ws.close()
-        })
+        ws.close()
       }
     })
   })
-  
+  ws.on('close', ()=> { 
+    ws.close()
+  })
 
 }
 
-module.exports = { ChkDsk, SystemFileCheck, ScanHealth, checkHealth, RestoreHealth, ScanHealth }
+module.exports = { 
+  ChkDsk, 
+  SystemFileCheck, 
+  ScanHealth, 
+  checkHealth, 
+  RestoreHealth, 
+  ScanHealth 
+}

@@ -1,4 +1,6 @@
-2024-10-21T20:24:21.455Z - Server rodando na porta 5001
-2024-10-21T20:24:21.467Z - Tabela "cliente" criada com sucesso.
-2024-10-21T20:24:38.311Z - Dados enviados com sucesso:
-2024-10-21T20:24:38.312Z - Estado de registro atualizado com sucesso! 
+2024-10-22T11:47:55.615Z - Server rodando na porta 5001
+2024-10-22T11:47:55.654Z - Tabela "cliente" criada com sucesso.
+2024-10-22T11:48:14.160Z - Dados enviados com sucesso:
+2024-10-22T11:48:14.161Z - Estado de registro atualizado com sucesso! 
+2024-10-22T11:48:55.624Z - Horário atual (8:48) ainda não atingiu o agendado (19:0).
+2024-10-22T11:49:55.635Z - Horário atual (8:49) ainda não atingiu o agendado (19:0).
