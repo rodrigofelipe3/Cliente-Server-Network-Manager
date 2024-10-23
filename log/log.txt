@@ -1,6 +1,75 @@
-2024-10-22T11:47:55.615Z - Server rodando na porta 5001
-2024-10-22T11:47:55.654Z - Tabela "cliente" criada com sucesso.
-2024-10-22T11:48:14.160Z - Dados enviados com sucesso:
-2024-10-22T11:48:14.161Z - Estado de registro atualizado com sucesso! 
-2024-10-22T11:48:55.624Z - Horário atual (8:48) ainda não atingiu o agendado (19:0).
-2024-10-22T11:49:55.635Z - Horário atual (8:49) ainda não atingiu o agendado (19:0).
+2024-10-23T19:25:18.226Z - Server rodando na porta 5001
+2024-10-23T19:25:18.245Z - Tabela "cliente" criada com sucesso.
+2024-10-23T19:25:28.232Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: connect ECONNREFUSED 127.0.0.1:5000
+2024-10-23T19:25:37.393Z - Erro no Fetch (sendInfoCOmputer): FetchError: request to http://127.0.0.1:5000/api/registerComputer failed, reason: connect ECONNREFUSED 127.0.0.1:5000
+2024-10-23T19:25:37.393Z - Dados enviados com sucesso:
+2024-10-23T19:26:18.230Z - Horário atual (16:26) ainda não atingiu o agendado (19:0).
+2024-10-23T19:27:18.234Z - Horário atual (16:27) ainda não atingiu o agendado (19:0).
+2024-10-23T19:28:18.247Z - Horário atual (16:28) ainda não atingiu o agendado (19:0).
+2024-10-23T19:29:18.261Z - Horário atual (16:29) ainda não atingiu o agendado (19:0).
+2024-10-23T19:30:18.262Z - Horário atual (16:30) ainda não atingiu o agendado (19:0).
+2024-10-23T19:30:55.635Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.636Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.637Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.636Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.637Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.637Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.638Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.638Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.639Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.639Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.640Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.640Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.640Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.642Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.642Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.642Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.643Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.643Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.643Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.644Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.645Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.644Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.646Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.647Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.646Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.644Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.648Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.647Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.648Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.649Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.649Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:55.647Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-10-23T19:30:58.555Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: connect ECONNREFUSED 127.0.0.1:5000
+2024-10-23T19:31:08.554Z - Erro ao enviar heartbeat: FetchError: request to http://127.0.0.1:5000/api/heartbeat/RODRIGO failed, reason: connect ECONNREFUSED 127.0.0.1:5000
+2024-10-23T19:31:18.266Z - Horário atual (16:31) ainda não atingiu o agendado (19:0).
+2024-10-23T19:32:18.275Z - Horário atual (16:32) ainda não atingiu o agendado (19:0).
+2024-10-23T19:33:18.283Z - Horário atual (16:33) ainda não atingiu o agendado (19:0).
+2024-10-23T19:34:18.287Z - Horário atual (16:34) ainda não atingiu o agendado (19:0).
+2024-10-23T19:35:18.300Z - Horário atual (16:35) ainda não atingiu o agendado (19:0).
+2024-10-23T19:36:18.301Z - Horário atual (16:36) ainda não atingiu o agendado (19:0).
+2024-10-23T19:37:18.310Z - Horário atual (16:37) ainda não atingiu o agendado (19:0).
+2024-10-23T19:38:18.318Z - Horário atual (16:38) ainda não atingiu o agendado (19:0).
+2024-10-23T19:39:18.319Z - Horário atual (16:39) ainda não atingiu o agendado (19:0).
+2024-10-23T19:40:18.326Z - Horário atual (16:40) ainda não atingiu o agendado (19:0).
+2024-10-23T19:41:18.333Z - Horário atual (16:41) ainda não atingiu o agendado (19:0).
+2024-10-23T19:42:18.347Z - Horário atual (16:42) ainda não atingiu o agendado (19:0).
+2024-10-23T19:43:18.352Z - Horário atual (16:43) ainda não atingiu o agendado (19:0).
+2024-10-23T19:44:18.354Z - Horário atual (16:44) ainda não atingiu o agendado (19:0).
+2024-10-23T19:45:18.366Z - Horário atual (16:45) ainda não atingiu o agendado (19:0).
+2024-10-23T19:46:18.377Z - Horário atual (16:46) ainda não atingiu o agendado (19:0).
+2024-10-23T19:47:18.391Z - Horário atual (16:47) ainda não atingiu o agendado (19:0).
+2024-10-23T19:48:18.391Z - Horário atual (16:48) ainda não atingiu o agendado (19:0).
+2024-10-23T19:49:18.394Z - Horário atual (16:49) ainda não atingiu o agendado (19:0).
+2024-10-23T19:50:18.405Z - Horário atual (16:50) ainda não atingiu o agendado (19:0).
+2024-10-23T19:51:18.407Z - Horário atual (16:51) ainda não atingiu o agendado (19:0).
+2024-10-23T19:52:18.422Z - Horário atual (16:52) ainda não atingiu o agendado (19:0).
+2024-10-23T19:53:18.423Z - Horário atual (16:53) ainda não atingiu o agendado (19:0).
+2024-10-23T19:54:18.434Z - Horário atual (16:54) ainda não atingiu o agendado (19:0).
+2024-10-23T19:55:18.447Z - Horário atual (16:55) ainda não atingiu o agendado (19:0).
+2024-10-23T19:56:18.455Z - Horário atual (16:56) ainda não atingiu o agendado (19:0).
+2024-10-23T19:57:18.462Z - Horário atual (16:57) ainda não atingiu o agendado (19:0).
+2024-10-23T19:58:18.469Z - Horário atual (16:58) ainda não atingiu o agendado (19:0).
+2024-10-23T19:59:18.480Z - Horário atual (16:59) ainda não atingiu o agendado (19:0).
+2024-10-23T20:00:18.485Z - Horário atual (17:0) ainda não atingiu o agendado (19:0).
+2024-10-23T20:01:18.490Z - Horário atual (17:1) ainda não atingiu o agendado (19:0).
