@@ -2,9 +2,7 @@
 const WebSocket = require("ws")
 const sudo = require('sudo-prompt')
 
-const ws = new WebSocket.Server({ port: 5002 })
-
-const closeAllConnections = () => {
+const CloseAllConnections = () => {
   ws.clients.forEach(client => {
     if (client.readState === WebSocket.OPEN) {
       client.close()
@@ -12,11 +10,15 @@ const closeAllConnections = () => {
   })
 }
 
-let execute = false
+
 
 
 const ChkDsk = async () => {
-  ws.on('connection', (ws) => {
+  
+  const wss = new WebSocket.Server({ port: 5002 })
+
+  let execute = false
+  wss.on('connection', (ws) => {
     console.log('Conectado ao servidor CheckDisk.');
     if (!execute) {
       execute = true
@@ -24,20 +26,19 @@ const ChkDsk = async () => {
         if (stderr) {
           ws.send(stderr.toString('utf-8'))
           ws.terminate()
-          closeAllConnections()
-          execute = false
+          wss.close()
         }
         if (stdout) {
           console.log(stdout)
           ws.send(stdout)
           ws.terminate()
-          closeAllConnections()
+          wss.close()
           execute = false
         }
         if (error) {
           ws.send(error.toString('utf-8'))
           ws.terminate()
-          closeAllConnections()
+          wss.close()
           execute = false
         }
 
@@ -47,7 +48,11 @@ const ChkDsk = async () => {
 }
 
 const SystemFileCheck = () => {
-  ws.on('connection', (ws) => {
+  let execute = false
+  
+  const wss = new WebSocket.Server({ port: 5002 })
+
+  wss.on('connection', (ws) => {
     console.log('Conectado ao servidor SFC SCANNOW.');
     if (!execute) {
       execute = true
@@ -55,33 +60,36 @@ const SystemFileCheck = () => {
         if (stderr) {
           ws.send(stderr.toString('utf-8'))
           ws.terminate()
-          closeAllConnections()
+          wss.close()
           execute = false
         }
         if (stdout) {
           console.log(stdout)
           ws.send(stdout.toString())
           ws.terminate()
-          closeAllConnections()
+          wss.close()
           execute = false
-         
         }
         if (error) {
           ws.send(error.toString('utf-8'))
           ws.terminate()
-          closeAllConnections()
+          wss.close()
           execute = false
         }
 
       })
     }
   })
-  ws.close()
+
 
 }
 
 const ScanHealth = () => {
-  ws.on('connection', (ws) => {
+  
+  const wss = new WebSocket.Server({ port: 5002 })
+
+  let execute = false
+  wss.on('connection', (ws) => {
     console.log('Conectado ao servidor ScanHealth.');
     if (!execute) {
       execute = true
@@ -89,19 +97,19 @@ const ScanHealth = () => {
         if (stderr) {
           ws.send(stderr.toString('utf-8'))
           ws.terminate()
-          closeAllConnections()
+          wss.close()
           execute = false
         }
         if (stdout) {
           ws.send(stdout.toString('utf-8'))
           ws.terminate()
-          closeAllConnections()
+          wss.close()
           execute = false
         }
         if (error) {
           ws.send(error.toString('utf-8'))
           ws.terminate()
-          closeAllConnections()
+          wss.close()
           execute = false
         }
 
@@ -112,7 +120,11 @@ const ScanHealth = () => {
 }
 
 const checkHealth = () => {
-  ws.on('connection', (ws) => {
+  
+  const wss = new WebSocket.Server({ port: 5002 })
+
+  let execute = false
+  wss.on('connection', (ws) => {
     console.log('Conectado ao servidor CheckHealth.');
     if (!execute) {
       execute = true
@@ -120,20 +132,20 @@ const checkHealth = () => {
         if (stderr) {
           ws.send(stderr.toString('utf-8'))
           ws.terminate()
-          closeAllConnections()
+          wss.close()
           execute = false
         }
         if (stdout) {
           console.log(stdout)
           ws.send(stdout)
           ws.terminate()
-          closeAllConnections()
+          wss.close()
           execute = false
         }
         if (error) {
           ws.send(error.toString('utf-8'))
           ws.terminate()
-          closeAllConnections()
+          wss.close()
           execute = false
         }
 
@@ -144,7 +156,10 @@ const checkHealth = () => {
 }
 
 const RestoreHealth = () => {
+  
+  const ws = new WebSocket.Server({ port: 5002 })
 
+  let execute = true
   ws.on('connection', (ws) => {
     console.log('Conectado ao servidor RestoreHealth.');
     if (!execute) {
@@ -153,20 +168,20 @@ const RestoreHealth = () => {
         if (stderr) {
           ws.send(stderr.toString('utf-8'))
           ws.terminate()
-          closeAllConnections()
+          ws.close()
           execute = false
         }
         if (stdout) {
           console.log(stdout)
           ws.send(stdout.toString('utf-8'))
           ws.terminate()
-          closeAllConnections()
+          ws.close()
           execute = false
         }
         if (error) {
           ws.send(error.toString('utf-8'))
           ws.terminate()
-          closeAllConnections()
+          ws.close()
           execute = false
         }
 

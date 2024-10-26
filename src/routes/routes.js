@@ -15,13 +15,13 @@ router.post('/cmdcommand', (req, res)=>{
     try{
         if(type == "sfc"){ 
             SystemFileCheck()
-        }if(type == 'chkdsk'){ 
+        }else if(type == 'chkdsk'){ 
             ChkDsk()
-        }if(type == 'checkhealth'){ 
+        }else if(type == 'checkhealth'){ 
             checkHealth()
-        }if(type == 'scanhealth'){ 
+        }else if(type == 'scanhealth'){ 
             ScanHealth()
-        }if(type == 'restorehealth'){ 
+        }else if(type == 'restorehealth'){ 
             RestoreHealth()
         }
         return res.status(200).json({ok: true})
