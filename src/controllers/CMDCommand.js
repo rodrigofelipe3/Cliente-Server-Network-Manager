@@ -65,7 +65,7 @@ const SystemFileCheck = () => {
         }
         if (stdout) {
           console.log(stdout)
-          ws.send(stdout.toString())
+          ws.send(stdout)
           ws.terminate()
           wss.close()
           execute = false
