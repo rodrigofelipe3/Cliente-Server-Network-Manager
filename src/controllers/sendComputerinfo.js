@@ -1,11 +1,13 @@
 const si = require("systeminformation");
 const os = require("os"); // Importa a biblioteca os
 const logToFile = require("../utils/logToFile");
-const { loadConfig } = require("../../loadConfig");
 const { UpdateRegister, isRegistred } = require("../database/database");
-const fetch = require("node-fetch")
+const fetch = require("node-fetch");
+const  loadConfig  = require("../../loadConfig");
 
-const sendComputerInfo = async (ip) => {
+const sendComputerInfo = async () => {
+  
+  
   try {
     const cpu = await si.cpu();
     const mem = await si.mem();
@@ -22,7 +24,7 @@ const sendComputerInfo = async (ip) => {
             const resolution = `${display.resolutionX}x${display.resolutionY}`;
             return `Tela ${index + 1}: ${resolution}`;
         });
-    const adaptadoresRemover = ['Loopback Pseudo-Interface 1', 'Hyper-V Virtual Ethernet Adapter'];
+    const adaptadoresRemover = ['Loopback Pseudo-Interface 1', 'Hyper-V Virtual Ethernet Adapter', 'Bluetooth Device (Personal Area Network)'];
     const ipv4 = networkInterfaces.find((net) => net.ip4 !== undefined)?.ip4 || "N/A";
     const macAddress = networkInterfaces.find((net) => net.mac !== undefined)?.mac || "N/A";
     const host = os.hostname();
@@ -30,8 +32,6 @@ const sendComputerInfo = async (ip) => {
     const filtredDevices = networkDevices.split(" , ")
     
     
-    const server = loadConfig();
-
     isRegistred(async (err, row) => {
       if (err) {
         logToFile.logToFile(err);
@@ -52,9 +52,11 @@ const sendComputerInfo = async (ip) => {
         host: host,
         network_devices: filtredDevices.filter(data => !adaptadoresRemover.includes(data)),
         poweroff: poweroff,
-        poweroffhour: poweroffhour
+        poweroffhour: poweroffhour,
+        powerstatus: true,
       };
       console.log(computerData);
+      const server = await loadConfig.loadConfig();
       const response = await fetch(
         `http://${server}:5000/api/registerComputer`,
         {
@@ -80,6 +82,7 @@ const sendComputerInfo = async (ip) => {
     
   } catch (error) {
     logToFile.logToFile("Erro ao coletar ou enviar dados:", error);
+    console.log(error)
   }
 };
 

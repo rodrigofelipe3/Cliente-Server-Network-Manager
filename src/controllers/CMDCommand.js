@@ -1,51 +1,43 @@
 
 const WebSocket = require("ws")
 const sudo = require('sudo-prompt')
-
-const CloseAllConnections = () => {
-  ws.clients.forEach(client => {
-    if (client.readState === WebSocket.OPEN) {
-      client.close()
-    }
-  })
-}
-
-
-
+const iconv = require('iconv-lite'); // Importando o iconv-lite
 
 const ChkDsk = async () => {
-  
-  const wss = new WebSocket.Server({ port: 5002 })
+  const wss = new WebSocket.Server({ port: 5002 });
 
-  let execute = false
+  let execute = false;
+
   wss.on('connection', (ws) => {
     console.log('Conectado ao servidor CheckDisk.');
     if (!execute) {
-      execute = true
+      execute = true;
       sudo.exec('chkdsk', { name: 'chkdsk' }, (error, stdout, stderr) => {
         if (stderr) {
-          ws.send(stderr.toString('utf-8'))
-          ws.terminate()
-          wss.close()
+          // Converter stderr do formato OEM (cmd padrão) para UTF-8 antes de enviar
+          ws.send(iconv.decode(Buffer.from(stderr, 'binary'), 'cp850'));
+          ws.terminate();
+          wss.close();
         }
         if (stdout) {
-          console.log(stdout)
-          ws.send(stdout)
-          ws.terminate()
-          wss.close()
-          execute = false
+          // Converter stdout do formato OEM (cmd padrão) para UTF-8 antes de enviar
+          console.log(stdout);
+          ws.send(iconv.decode(Buffer.from(stdout, 'binary'), 'cp850'));
+          ws.terminate();
+          wss.close();
+          execute = false;
         }
         if (error) {
-          ws.send(error.toString('utf-8'))
-          ws.terminate()
-          wss.close()
-          execute = false
+          // Converter error do formato OEM para UTF-8 antes de enviar
+          ws.send(iconv.decode(Buffer.from(error.toString(), 'binary'), 'cp850'));
+          ws.terminate();
+          wss.close();
+          execute = false;
         }
-
-      })
+      });
     }
-  })
-}
+  });
+};
 
 const SystemFileCheck = () => {
   let execute = false
@@ -58,23 +50,25 @@ const SystemFileCheck = () => {
       execute = true
       sudo.exec('sfc /scannow', { name: 'sfc' }, (error, stdout, stderr) => {
         if (stderr) {
-          ws.send(stderr.toString('utf-8'))
-          ws.terminate()
-          wss.close()
-          execute = false
+          // Converter stderr do formato OEM (cmd padrão) para UTF-8 antes de enviar
+          ws.send(iconv.decode(Buffer.from(stderr, 'binary'), 'cp850'));
+          ws.terminate();
+          wss.close();
         }
         if (stdout) {
-          console.log(stdout)
-          ws.send(stdout)
-          ws.terminate()
-          wss.close()
-          execute = false
+          // Converter stdout do formato OEM (cmd padrão) para UTF-8 antes de enviar
+          console.log(stdout);
+          ws.send(iconv.decode(Buffer.from(stdout, 'binary'), 'cp850'));
+          ws.terminate();
+          wss.close();
+          execute = false;
         }
         if (error) {
-          ws.send(error.toString('utf-8'))
-          ws.terminate()
-          wss.close()
-          execute = false
+          // Converter error do formato OEM para UTF-8 antes de enviar
+          ws.send(iconv.decode(Buffer.from(error.toString(), 'binary'), 'cp850'));
+          ws.terminate();
+          wss.close();
+          execute = false;
         }
 
       })
@@ -95,22 +89,25 @@ const ScanHealth = () => {
       execute = true
       sudo.exec('dism /online /cleanup-image /scanhealth', { name: 'scanhealth' }, (error, stdout, stderr) => {
         if (stderr) {
-          ws.send(stderr.toString('utf-8'))
-          ws.terminate()
-          wss.close()
-          execute = false
+          // Converter stderr do formato OEM (cmd padrão) para UTF-8 antes de enviar
+          ws.send(iconv.decode(Buffer.from(stderr, 'binary'), 'cp850'));
+          ws.terminate();
+          wss.close();
         }
         if (stdout) {
-          ws.send(stdout.toString('utf-8'))
-          ws.terminate()
-          wss.close()
-          execute = false
+          // Converter stdout do formato OEM (cmd padrão) para UTF-8 antes de enviar
+          console.log(stdout);
+          ws.send(iconv.decode(Buffer.from(stdout, 'binary'), 'cp850'));
+          ws.terminate();
+          wss.close();
+          execute = false;
         }
         if (error) {
-          ws.send(error.toString('utf-8'))
-          ws.terminate()
-          wss.close()
-          execute = false
+          // Converter error do formato OEM para UTF-8 antes de enviar
+          ws.send(iconv.decode(Buffer.from(error.toString(), 'binary'), 'cp850'));
+          ws.terminate();
+          wss.close();
+          execute = false;
         }
 
       })
@@ -130,23 +127,25 @@ const checkHealth = () => {
       execute = true
       sudo.exec('dism /online /cleanup-image /checkhealth', { name: 'checkhealth' }, (error, stdout, stderr) => {
         if (stderr) {
-          ws.send(stderr.toString('utf-8'))
-          ws.terminate()
-          wss.close()
-          execute = false
+          // Converter stderr do formato OEM (cmd padrão) para UTF-8 antes de enviar
+          ws.send(iconv.decode(Buffer.from(stderr, 'binary'), 'cp850'));
+          ws.terminate();
+          wss.close();
         }
         if (stdout) {
-          console.log(stdout)
-          ws.send(stdout)
-          ws.terminate()
-          wss.close()
-          execute = false
+          // Converter stdout do formato OEM (cmd padrão) para UTF-8 antes de enviar
+          console.log(stdout);
+          ws.send(iconv.decode(Buffer.from(stdout, 'binary'), 'cp850'));
+          ws.terminate();
+          wss.close();
+          execute = false;
         }
         if (error) {
-          ws.send(error.toString('utf-8'))
-          ws.terminate()
-          wss.close()
-          execute = false
+          // Converter error do formato OEM para UTF-8 antes de enviar
+          ws.send(iconv.decode(Buffer.from(error.toString(), 'binary'), 'cp850'));
+          ws.terminate();
+          wss.close();
+          execute = false;
         }
 
       })
@@ -166,25 +165,26 @@ const RestoreHealth = () => {
       execute = true
       sudo.exec('dism /online /cleanup-image /restorehealth', { name: 'restorehealth' }, (error, stdout, stderr) => {
         if (stderr) {
-          ws.send(stderr.toString('utf-8'))
-          ws.terminate()
-          ws.close()
-          execute = false
+          // Converter stderr do formato OEM (cmd padrão) para UTF-8 antes de enviar
+          ws.send(iconv.decode(Buffer.from(stderr, 'binary'), 'cp850'));
+          ws.terminate();
+          wss.close();
         }
         if (stdout) {
-          console.log(stdout)
-          ws.send(stdout.toString('utf-8'))
-          ws.terminate()
-          ws.close()
-          execute = false
+          // Converter stdout do formato OEM (cmd padrão) para UTF-8 antes de enviar
+          console.log(stdout);
+          ws.send(iconv.decode(Buffer.from(stdout, 'binary'), 'cp850'));
+          ws.terminate();
+          wss.close();
+          execute = false;
         }
         if (error) {
-          ws.send(error.toString('utf-8'))
-          ws.terminate()
-          ws.close()
-          execute = false
+          // Converter error do formato OEM para UTF-8 antes de enviar
+          ws.send(iconv.decode(Buffer.from(error.toString(), 'binary'), 'cp850'));
+          ws.terminate();
+          wss.close();
+          execute = false;
         }
-
       })
     }
   })

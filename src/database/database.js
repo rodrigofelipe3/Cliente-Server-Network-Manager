@@ -4,23 +4,45 @@ const logToFile = require("../utils/logToFile");
 
 const db = new sqlite3.Database("./database/database.db")
 
-
 const CreateDatabase = async () => {
-  const response = await CreateTable()
-  if(response.ok == true){ 
-    isRegistred((err, row) => {
-      if (Array.isArray(row) && row.length === 0 || row == null) {
-        db.run('INSERT INTO cliente DEFAULT VALUES;', [], (err) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const response = await CreateTable();
+
+      if (response.ok === true) {
+        isRegistred((err, row) => {
           if (err) {
-            logToFile.logToFile(err)
+            logToFile.logToFile(`Erro em isRegistred: ${err}`);
+            return reject(false); // Rejeita em caso de erro
           }
-          console.log(row)
-          logToFile.logToFile("Valores padrões inseridos com sucesso!")
-        })
+
+          // Verifica se a tabela está vazia
+          if (!row || (Array.isArray(row) && row.length === 0)) {
+            console.log('Tabela vazia. Inserindo valores padrão...');
+            db.run('INSERT INTO cliente DEFAULT VALUES;', [], (err) => {
+              if (err) {
+                logToFile.logToFile(`Erro ao inserir valores padrão: ${err}`);
+                return reject(false); // Rejeita em caso de erro
+              }
+              logToFile.logToFile("Valores padrões inseridos com sucesso!");
+              resolve(true); // Resolve com sucesso
+            });
+          } else {
+            // A tabela já possui dados
+            resolve(true);
+          }
+        });
+      } else {
+        logToFile.logToFile("Erro em CreateTable: resposta não OK.");
+        reject(false); // Rejeita se CreateTable não retornar `ok`
       }
-    })
-  }
-}
+    } catch (error) {
+      logToFile.logToFile(`Erro inesperado em CreateDatabase: ${error}`);
+      reject(false); // Rejeita em caso de erro inesperado
+    }
+  });
+};
+
 
 
 const CreateTable = () => {
@@ -31,16 +53,18 @@ const CreateTable = () => {
             id INTEGER PRIMARY KEY,
             time TEXT NOT NULL DEFAULT '18:30',
             registred INTEGER NOT NULL DEFAULT 0,
-            poweroff INTEGER NOT NULL DEFAULT 1
+            poweroff INTEGER NOT NULL DEFAULT 1,
+            serverfound INTEGER NOT NULL DEFAULT 0
         );
         `,
         (err) => {
           if (err) {
             logToFile.logToFile(`Erro ao criar a tabela: ${err}`);
-            resolve({ok: false})
+
+            console.log('Erro ao criar tabela cliente' + err)
+            resolve({ ok: false })
           } else {
-            logToFile.logToFile('Tabela "cliente" criada com sucesso.');
-            resolve({ok: true})
+            resolve({ ok: true })
           }
         }
       );
@@ -54,7 +78,6 @@ const updateSchedule = (newTime, res) => {
       logToFile.logToFile(`Erro ao atualizar o horário: ${err.message}`);
       return res.status(500).json({ ok: false, msg: err.message });
     }
-    logToFile.logToFile(`Horário atualizado para: ${newTime}`);
     return res.status(200).json({ ok: true, msg: "Desligamento programado com sucesso!" });
   });
 };
@@ -66,14 +89,13 @@ const deleteFromSchedule = (id) => {
         logToFile.logToFile("Erro ao deletar horário de desligamento: " + err)
         return false
       } else {
-        logToFile.logToFile("Cancelamento feito com sucesso!")
         return true
       }
     });
   });
 }
 
-const GetData = (callback) => {
+const GetTime = (callback) => {
   db.get(`SELECT time FROM cliente WHERE id = 1`, (err, row) => {
     if (err) {
       logToFile.logToFile(`Erro ao consultar a tabela: ${err.message}`);
@@ -84,12 +106,31 @@ const GetData = (callback) => {
   });
 };
 
+const GetFoundServer = (callback) => {
+  db.get(`SELECT serverfound FROM cliente WHERE id = 1`, (err, row) => {
+    if (err) {
+      logToFile.logToFile(`Erro ao consultar a tabela: ${err.message}`);
+      return callback(err, null);
+    } else {
+      return callback(null, row);
+    }
+  });
+};
+
+const UpdateServerFound = () => {
+  console.log('Executando Update Server Found')
+  db.run('UPDATE cliente SET serverfound = 1 WHERE id = 1', [], (err) => {
+    if (err) {
+      logToFile.logToFile("Erro ao atualizar o estado de Registro" + err)
+    }
+  })
+}
+
 const UpdateRegister = () => {
   db.run('UPDATE cliente SET registred = 1 WHERE id = 1', [], (err) => {
     if (err) {
       logToFile.logToFile("Erro ao atualizar o estado de Registro" + err)
     }
-    logToFile.logToFile("Estado de registro atualizado com sucesso! ")
   })
 }
 
@@ -108,9 +149,11 @@ const isRegistred = (callback) => {
 module.exports = {
   CreateTable,
   updateSchedule,
-  GetData,
+  GetTime,
   deleteFromSchedule,
   UpdateRegister,
   isRegistred,
-  CreateDatabase
+  CreateDatabase,
+  UpdateServerFound,
+  GetFoundServer
 };

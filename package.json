@@ -20,6 +20,8 @@
       "./src/database/database.js",
       "./src/routes/routes.js",
       "./src/utils/logToFile.js",
+      "./src/utils/findServer.js",
+      "./src/utils/ChangeWallpaper.js",
       "./src/utils/scheduleShutdown.js",
       "./node_modules/**/*"
     ],
@@ -32,6 +34,7 @@
     "cors": "^2.8.5",
     "electron": "^32.1.1",
     "express": "^4.21.0",
+    "iconv-lite": "^0.6.3",
     "node-fetch": "^2.7.0",
     "node-gyp": "^10.2.0",
     "node-windows": "^1.0.0-beta.8",

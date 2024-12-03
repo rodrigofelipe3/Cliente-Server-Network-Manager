@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const { findIpResponse } = require('./src/utils/findServer');
 
-function loadConfig() {
+async function loadConfig() {
     const configPath = "./config.json";
 
     try {
@@ -10,6 +11,7 @@ function loadConfig() {
         return config.serverIp
     } catch (error) {
         console.error('Erro ao carregar o arquivo config.json:', error);
+        findIpResponse('10.10.1.130', '10.10.1.253', 5000, '/api/')
     }
 }
 

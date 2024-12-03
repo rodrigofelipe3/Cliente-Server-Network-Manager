@@ -6,7 +6,7 @@ const fetch = require("node-fetch")
 
 const sendHeartbeat = async () => {
   
-  const server = loadConfig()
+  const server = await loadConfig()
   try {
     const response = await fetch(`http://${server}:5000/api/heartbeat/${hostname}`,{ 
       method: "POST",
@@ -14,6 +14,7 @@ const sendHeartbeat = async () => {
         "Content-Type":"application/json"
       }
     });
+    console.log(response)
     if(response.status == 200){ 
       logToFile.logToFile("HeartBeat enviado com sucesso!")
     }else  { 

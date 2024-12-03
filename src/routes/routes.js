@@ -33,8 +33,9 @@ router.post('/cmdcommand', (req, res)=>{
 
 
 router.post('/shutdown', async (req, res) => {  
-    const seconds = 600
+    const seconds = 300
     try { 
+        console.log('COmando para desligar recebido!')
         const response = await Shutdown0(seconds)
         if(response.ok == true) { 
             return res.status(200).json({ok: true, msg: response.msg})

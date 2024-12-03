@@ -15,7 +15,7 @@ const clearLogFile = () => {
 };
 
 const logToFile = (message) => {
-    const logMessage = `${new Date().toISOString()} - ${message}\n`;
+    const logMessage = `${new Date(Date.now()).toISOString()} - ${message}\n`;
 
     fs.appendFile("./log/log.txt", logMessage, (err) => {
         if (err) {
