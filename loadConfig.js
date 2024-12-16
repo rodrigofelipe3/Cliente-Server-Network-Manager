@@ -8,10 +8,10 @@ async function loadConfig() {
     try {
         const data = fs.readFileSync(configPath, 'utf8'); 
         const config = JSON.parse(data); 
-        return config.serverIp
+        return {version: config.version, serverIp: config.serverIp}
     } catch (error) {
         console.error('Erro ao carregar o arquivo config.json:', error);
-        findIpResponse('10.10.1.130', '10.10.1.253', 5000, '/api/')
+        findIpResponse('10.10.1.1', '10.10.1.253', 5000, '/api/')
     }
 }
 

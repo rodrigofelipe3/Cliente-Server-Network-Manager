@@ -6,9 +6,9 @@ const fetch = require("node-fetch")
 
 const sendHeartbeat = async () => {
   
-  const server = await loadConfig()
+  const {version, serverIp} = await loadConfig()
   try {
-    const response = await fetch(`http://${server}:5000/api/heartbeat/${hostname}`,{ 
+    const response = await fetch(`http://${serverIp}:5000/api/heartbeat/${hostname}`,{ 
       method: "POST",
       headers: { 
         "Content-Type":"application/json"

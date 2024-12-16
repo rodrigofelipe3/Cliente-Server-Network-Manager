@@ -56,9 +56,9 @@ const sendComputerInfo = async () => {
         powerstatus: true,
       };
       console.log(computerData);
-      const server = await loadConfig.loadConfig();
+      const {version, serverIp}= await loadConfig.loadConfig();
       const response = await fetch(
-        `http://${server}:5000/api/registerComputer`,
+        `http://${serverIp}:5000/api/registerComputer`,
         {
           method: "POST",
           headers: {

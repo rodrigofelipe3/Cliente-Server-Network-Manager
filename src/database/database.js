@@ -82,6 +82,16 @@ const updateSchedule = (newTime, res) => {
   });
 };
 
+const updateClientVersion = (version) => {
+  console.log('Versão: ', version)
+  db.run(`UPDATE cliente SET version = ? WHERE id = 1`, [version], (err) => {
+    if (err) {
+      logToFile.logToFile(`Erro ao atualizar o horário: ${err.message}`);
+    }
+    console.log('Versão atualizada com sucesso!')
+  });
+};
+
 const deleteFromSchedule = (id) => {
   db.serialize(() => {
     return db.run(`UPDATE cliente SET time = 'none' WHERE id = ?`, [id], function (err) {
@@ -155,5 +165,6 @@ module.exports = {
   isRegistred,
   CreateDatabase,
   UpdateServerFound,
-  GetFoundServer
+  GetFoundServer,
+  updateClientVersion
 };

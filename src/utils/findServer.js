@@ -1,23 +1,37 @@
 const fetch = require('node-fetch');
 const fs = require('fs'); // Para criar o arquivo config.json
 const { UpdateServerFound } = require('../database/database');
+const { logToFile } = require('./logToFile');
 
 const createConfigJson = (serverIp) => { 
-    const config = {
-        serverIp: String(serverIp) // Define o IP recebido na função
-    };
-    console.log(serverIp)
-    const jsonString = JSON.stringify(config, null, 4);
-
-    // Escrever o JSON no arquivo config.json
-    fs.writeFile('config.json', jsonString, (err) => {
-        if (err) {
-            console.error('Erro ao criar o arquivo config.json:', err);
-        } else {
-            console.log('Arquivo config.json criado com sucesso!');
-        }
-    });
+    try{ 
+        fs.readFile('./config.json', 'utf-8', (err, data)=> { 
+            console.log(data)
+            if(err){ 
+                console.error(err)
+                logToFile(err)
+            }
+            console.log(data)
+            let jsonData = JSON.parse(data)
+            const config = {
+                version: jsonData.version,
+                serverIp: String(serverIp) // Define o IP recebido na função
+            };
+            fs.writeFile('./config.json', JSON.stringify(config, null, 4), (err) => {
+                if (err) {
+                    console.error('Erro ao criar o arquivo config.json:', err);
+                } else {
+                    console.log('Arquivo config.json criado com sucesso!');
+                }
+            });
+        })
+    }catch(err){ 
+        logToFile(err)
+    }
+    
 }
+
+
 // Função para realizar solicitações a uma faixa de IPs
 async function findIpResponse(start, end, port, path) {
     const ipToInt = (ip) => ip.split('.').reduce((acc, oct) => (acc << 8) + parseInt(oct), 0);
@@ -47,7 +61,7 @@ async function findIpResponse(start, end, port, path) {
             });
 
             clearTimeout(timeout); // Limpar timeout se a requisição terminar
-
+            console.log(response)
             if (response.ok) {
                 console.log(`SERVIDOR RESPONDEU no IP: ${ipAtual}`);
                 createConfigJson(ipAtual);
