@@ -39,7 +39,7 @@ const PORT = 5001;
                     }
                     if (serverFound === 1) {
                         sendComputerInfo();
-                        setInterval(sendHeartbeat, 10000);
+                        setInterval(sendHeartbeat, 50000);
                     }
                 });
 

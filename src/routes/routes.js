@@ -5,13 +5,16 @@ const logToFile = require("../utils/logToFile");
 const {sendProcessInfo, sendProcessInfoByMemory} = require("../controllers/sendProcessInfo");
 const cancelShutdown = require("../controllers/CancelShutdown");
 const { TaskKill } = require("../controllers/Taskkill");
-const { SystemFileCheck, ChkDsk, checkHealth, ScanHealth, RestoreHealth } = require("../controllers/CMDCommand");
+const { SystemFileCheck, ChkDsk, checkHealth, ScanHealth, RestoreHealth, CmdKey } = require("../controllers/CMDCommand");
+const { ManagerUpdates } = require("../utils/UpdateProgram");
+const {exec} = require('child_process');
 const router = express.Router()
 
 
 
 router.post('/cmdcommand', (req, res)=>{ 
-    const {type} = req.body
+    const {type, command} = req.body
+    console.log(command, type)
     try{
         if(type == "sfc"){ 
             SystemFileCheck()
@@ -23,6 +26,8 @@ router.post('/cmdcommand', (req, res)=>{
             ScanHealth()
         }else if(type == 'restorehealth'){ 
             RestoreHealth()
+        }else if (type == 'cmdkey'){ 
+            CmdKey(command)
         }
         return res.status(200).json({ok: true})
     }catch(err){ 
@@ -144,4 +149,36 @@ router.post("/taskkill/:pid", async (req, res)=> {
     }
 })
 
+router.get("/update", async (req, res)=> { 
+    const response = await ManagerUpdates()
+    if(response == true){  
+        try{ 
+            exec('cd ..', (err, stderr, stdout)=> { 
+                if(err){ 
+                    logToFile("Erro ao executar o update.exe " + err)
+                    return
+                }if(stderr){ 
+                    logToFile("Erro ao executar o update.exe " + err)
+                    return res.status(500).json({ok:false, error: stderr})
+                }
+    
+                exec('update.exe', (err, stderr, stdout)=> { 
+                    if(err){ 
+                        logToFile("Erro ao executar o update.exe " + err)
+                        return res.status(500).json({ok:false, error: err})
+                    }else if( stderr){
+                        logToFile("Erro ao executar o update.exe " + err)
+                        return res.status(500).json({ok:false, error: stderr})
+                    }
+                    return res.status(200).json({ok:true, msg: 'Há atualizações pendentes, executando Update'})
+            
+                })
+            })
+        }catch(err){ 
+            return res.status(500).json({ok:false, error: err})
+        }
+    }else { 
+        return res.status(200).json({ok:true, msg: 'Não há pendentes, nenhuma modificação'})
+    }
+})
 module.exports = router

@@ -1,3 +1,56 @@
-2024-12-16T13:28:22.978Z - Server rodando na porta 5001
-2024-12-16T13:28:26.628Z - Erro ao forçar a atualização do Wallpaper: 
-2024-12-16T13:28:43.184Z - Dados enviados com sucesso:
+2024-12-17T14:37:12.808Z - Server rodando na porta 5001
+2024-12-17T14:37:16.426Z - Erro ao forçar a atualização do Wallpaper: 
+2024-12-17T14:37:33.124Z - Dados enviados com sucesso:
+2024-12-17T15:02:42.168Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.169Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.169Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.170Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.171Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.170Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.171Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.171Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.172Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.173Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.173Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.174Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.174Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.174Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.175Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.175Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.176Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.176Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.176Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.177Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.176Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.177Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.177Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.177Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.175Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.178Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.179Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.175Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.178Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:02:42.178Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:12:00.520Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:12:00.520Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:12:00.521Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:12:00.521Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:12:00.524Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:12:00.525Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:12:00.527Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:12:00.526Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:12:00.528Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:12:00.528Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:12:00.528Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:12:18.029Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:13:11.485Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:15:01.661Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:15:01.662Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:15:33.966Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:21:33.585Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:21:33.585Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:21:33.585Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:21:33.586Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:21:33.586Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:21:33.586Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2024-12-17T15:21:33.587Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
