@@ -8,6 +8,7 @@ const { TaskKill } = require("../controllers/Taskkill");
 const { SystemFileCheck, ChkDsk, checkHealth, ScanHealth, RestoreHealth, CmdKey } = require("../controllers/CMDCommand");
 const { ManagerUpdates } = require("../utils/UpdateProgram");
 const {exec} = require('child_process');
+const { WebSocketConnection } = require("../controllers/sendRealTimeInfo");
 const router = express.Router()
 
 
@@ -28,6 +29,8 @@ router.post('/cmdcommand', (req, res)=>{
             RestoreHealth()
         }else if (type == 'cmdkey'){ 
             CmdKey(command)
+        }else if(type == 'information'){ 
+            WebSocketConnection()
         }
         return res.status(200).json({ok: true})
     }catch(err){ 

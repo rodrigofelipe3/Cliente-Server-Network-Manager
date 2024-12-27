@@ -90,4 +90,5 @@ const sendProcessInfo = async () => {
 module.exports = {
   sendProcessInfo,
   sendProcessInfoByMemory
-  }
+}
+

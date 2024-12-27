@@ -15,13 +15,11 @@ const ChkDsk = async () => {
       execute = true;
       sudo.exec('chkdsk', { name: 'chkdsk' }, (error, stdout, stderr) => {
         if (stderr) {
-          // Converter stderr do formato OEM (cmd padrão) para UTF-8 antes de enviar
           wss.send(iconv.decode(Buffer.from(stderr, 'binary'), 'utf-8'));
           wss.close()
           ws.close();
         }
         if (stdout) {
-          // Converter stdout do formato OEM (cmd padrão) para UTF-8 antes de enviar
           console.log(stdout);
           wss.send(iconv.decode(Buffer.from(stdout, 'binary'), 'utf-8'));
           wss.close();
@@ -29,7 +27,6 @@ const ChkDsk = async () => {
           execute = false;
         }
         if (error) {
-          // Converter error do formato OEM para UTF-8 antes de enviar
           wss.send(iconv.decode(Buffer.from(error.toString(), 'binary'), 'utf-8'));
           wss.close();
           ws.close()
@@ -51,13 +48,11 @@ const SystemFileCheck = () => {
       execute = true
       sudo.exec('sfc /scannow', { name: 'sfc' }, (error, stdout, stderr) => {
         if (stderr) {
-          // Converter stderr do formato OEM (cmd padrão) para UTF-8 antes de enviar
           wss.send(iconv.decode(Buffer.from(stderr, 'binary'), 'utf-8'));
           wss.close()
           ws.close();
         }
         if (stdout) {
-          // Converter stdout do formato OEM (cmd padrão) para UTF-8 antes de enviar
           console.log(stdout);
           wss.send(iconv.decode(Buffer.from(stdout, 'binary'), 'utf-8'));
           wss.close();
@@ -65,7 +60,6 @@ const SystemFileCheck = () => {
           execute = false;
         }
         if (error) {
-          // Converter error do formato OEM para UTF-8 antes de enviar
           wss.send(iconv.decode(Buffer.from(error.toString(), 'binary'), 'utf-8'));
           wss.close();
           ws.close()
@@ -90,13 +84,11 @@ const ScanHealth = () => {
       execute = true
       sudo.exec('dism /online /cleanup-image /scanhealth', { name: 'scanhealth' }, (error, stdout, stderr) => {
         if (stderr) {
-          // Converter stderr do formato OEM (cmd padrão) para UTF-8 antes de enviar
           wss.send(iconv.decode(Buffer.from(stderr, 'binary'), 'utf-8'));
           wss.close()
           ws.close();
         }
         if (stdout) {
-          // Converter stdout do formato OEM (cmd padrão) para UTF-8 antes de enviar
           console.log(stdout);
           wss.send(iconv.decode(Buffer.from(stdout, 'binary'), 'utf-8'));
           wss.close();
@@ -104,7 +96,6 @@ const ScanHealth = () => {
           execute = false;
         }
         if (error) {
-          // Converter error do formato OEM para UTF-8 antes de enviar
           wss.send(iconv.decode(Buffer.from(error.toString(), 'binary'), 'utf-8'));
           wss.close();
           ws.close()
@@ -205,13 +196,11 @@ const CmdKey = (command) => {
       sudo.exec(`cmdkey ${command}`, { name: 'cmdkey' }, (error, stdout, stderr) => {
         if (stderr) {
           console.log(stderr)
-          // Converter stderr do formato OEM (cmd padrão) para UTF-8 antes de enviar
           wss.send(iconv.decode(Buffer.from(stderr, 'binary'), 'utf-8'));
           wss.close()
           ws.close();
         }
         if (stdout) {
-          // Converter stdout do formato OEM (cmd padrão) para UTF-8 antes de enviar
           console.log(stdout.toString())
           wss.send(iconv.decode(Buffer.from(stdout, 'binary'), 'utf-8'));
           wss.close()
@@ -220,7 +209,6 @@ const CmdKey = (command) => {
         }
         if (error) {
           console.log(error)
-          // Converter error do formato OEM para UTF-8 antes de enviar
           wss.send(iconv.decode(Buffer.from(error.toString(), 'binary'), 'utf-8'));
           
           wss.close()
