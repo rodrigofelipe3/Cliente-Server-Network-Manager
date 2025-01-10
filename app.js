@@ -38,7 +38,7 @@ const PORT = 5001;
                         findIpResponse('10.10.1.1', '10.10.1.253', 5000, '/api/')
                     }
                     if (serverFound === 1) {
-                        sendComputerInfo();
+                        //sendComputerInfo();
                         setInterval(sendHeartbeat, 50000);
                     }
                 });

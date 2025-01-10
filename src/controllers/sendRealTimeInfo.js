@@ -48,23 +48,34 @@ const getMemoryUsage = async () => {
     });
 };
 
-// Inicializar o WebSocket
 let wss;
+let activeUsers = {}; 
+
 const WebSocketConnection = () => {
     try {
-        if (!wss) {
+       
             wss = new WebSocket.Server({ port: 443 });
-        }
+        
 
         wss.on('connection', (ws) => {
-            console.log('Conectado ao cliente');
 
+            console.log('Conectado ao cliente');
             // Função para enviar mensagens assíncronas
+            ws.on('message', (message)=> { 
+                const messageString = message.toString()
+                console.log(messageString)
+                const data = JSON.parse(messageString)
+                if (data.type === 'authenticate') {
+                    // Associar a nova conexão a um ID de usuário
+                    activeUsers[data.userId] = ws;
+                    console.log('Usuário autenticado:', data.userId);
+                }
+            })
             const sendMessageAsync = async () => {
                 try {
                     const cpuData = await getCpuUsage();
                     const memoryData = await getMemoryUsage();
-                    console.log('enviando mensagem')
+                    console.log('Enviando mensagem');
                     const message = `usage:${cpuData.usage},memper:${memoryData.usedMemoryPercentage},usedmemory:${memoryData.usedMemory},totalmemory:${memoryData.totalMemory},freemem:${memoryData.freeMemory}`;
                     
                     if (ws.readyState === WebSocket.OPEN) {
@@ -73,7 +84,7 @@ const WebSocketConnection = () => {
                         });
                     }
                 } catch (error) {
-                    console.error("Erro ao enviar mensagem:", error);
+                    console.error('Erro ao enviar mensagem:', error);
                 }
             };
 
@@ -81,7 +92,7 @@ const WebSocketConnection = () => {
             const intervalLoop = async () => {
                 while (ws.readyState === WebSocket.OPEN) {
                     await sendMessageAsync();
-                    await new Promise(resolve => setTimeout(resolve, 1000)); // Espera 2.5s antes da próxima execução
+                    await new Promise(resolve => setTimeout(resolve, 800)); // Espera 2.5s antes da próxima execução
                 }
             };
 
@@ -90,10 +101,24 @@ const WebSocketConnection = () => {
 
             // Evento de fechamento da conexão pelo cliente
             ws.on('close', () => {
-                console.log("Fechando conexão com cliente");
+                for (const userId in activeUsers) {
+                    if (activeUsers[userId] === ws) {
+                        delete activeUsers[userId];
+                        console.log('Usuário desconectado:', userId);
+                        break;
+                    }
+                }
+                wss.close()
+                console.log(wss)
+            });
+
+            // Garantir que o cliente seja liberado em caso de erro
+            ws.on('error', (err) => {
+                console.error('Erro na conexão WebSocket:', err);
             });
         });
 
+        // Evento para encerrar o servidor WebSocket
         process.on('SIGINT', () => {
             console.log('Encerrando servidor WebSocket...');
             wss.close(() => {
@@ -103,7 +128,7 @@ const WebSocketConnection = () => {
         });
 
     } catch (e) {
-        console.log(e);
+        console.error(e);
     }
 };
 
