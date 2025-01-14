@@ -45,7 +45,7 @@ router.post('/shutdown', async (req, res) => {
     try { 
         console.log('COmando para desligar recebido!')
         const response = await Shutdown0(seconds)
-        if(response.ok == true) { 
+        if(response.ok == true) {
             return res.status(200).json({ok: true, msg: response.msg})
         }else { 
             return res.status(200).json({ok: true, error: response.error})
