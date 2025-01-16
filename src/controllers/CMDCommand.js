@@ -1,6 +1,5 @@
 
 const WebSocket = require("ws")
-const {exec} = require('child_process')
 const sudo = require('sudo-prompt')
 const iconv = require('iconv-lite'); // Importando o iconv-lite
 

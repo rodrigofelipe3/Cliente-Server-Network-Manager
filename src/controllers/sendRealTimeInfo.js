@@ -86,11 +86,9 @@ let wss = null;
 let activeUsers = {};
 
 const WebSocketConnection = () => {
+    console.log('Executando WebSocket')
     try {
-
-        if (!wss) {
-            wss = new WebSocket.Server({ port: 443 });
-        }
+        if(!wss) wss = new WebSocket.Server({ port: 443 });
 
         wss.on('connection', (ws) => {
 
@@ -98,6 +96,7 @@ const WebSocketConnection = () => {
             // Função para enviar mensagens assíncrona
             ws.on('message', (message) => {
                 const messageString = message.toString()
+                console.log(messageString)
                 if (messageString != 'close') {
                     const data = JSON.parse(messageString)
                     if (data.type === 'authenticate') {
@@ -107,7 +106,9 @@ const WebSocketConnection = () => {
                     }
                 }else { 
                     ws.close()
-                    wss.close()
+                    wss != null ? wss.close(): undefined
+                    wss != null ? wss = null : undefined
+                    activeUsers = {}
                 }
             })
             const sendMessageAsync = async () => {
@@ -118,6 +119,7 @@ const WebSocketConnection = () => {
                     const message = `usage:${cpuData.usage},memper:${memoryData.usedMemoryPercentage},usedmemory:${memoryData.usedMemory},totalmemory:${memoryData.totalMemory},freemem:${memoryData.freeMemory},processes:${processes}`;
                     
                     if (ws.readyState === WebSocket.OPEN) {
+                        console.log("Enviando Mensagem")
                         ws.send(message, (err) => {
                             if (err) console.error(err);
                         });
@@ -141,20 +143,17 @@ const WebSocketConnection = () => {
                         break;
                     }
                 }
-                console.log('Cliente Desconectado')
+                wss != null ? wss.close() : undefined
+                wss != null ? wss = null : undefined
+                activeUsers = {}
             });
             ws.on('error', (err) => {
                 console.error('Erro na conexão WebSocket:', err);
             });
         });
-        process.on('SIGINT', () => {
-            wss.close(() => {
-                process.exit(0);
-            });
-        });
 
     } catch (e) {
-        console.error(e);
+        if(e.code == 'EADDRINUSE') console.error('A porta 443 já está em uso')
     }
 };
 
