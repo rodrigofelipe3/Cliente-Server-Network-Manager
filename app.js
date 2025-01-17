@@ -38,7 +38,7 @@ const PORT = 5001;
                         findIpResponse('10.10.1.1', '10.10.1.253', 5000, '/api/')
                     }
                     if (serverFound === 1) {
-                        //sendComputerInfo();
+                        sendComputerInfo();
                         setInterval(sendHeartbeat, 50000);
                     }
                 });
@@ -47,9 +47,6 @@ const PORT = 5001;
             // Obtém informações do servidor encontrado
 
             // Inicializa o servidor após as etapas anteriores
-            const options = { 
-
-            }
             app.use(cors());
             app.use(express.json());
             app.use("/api", route);

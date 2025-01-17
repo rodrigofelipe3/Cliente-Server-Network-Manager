@@ -16,6 +16,7 @@
       "./src/controllers/SendAHb.js",
       "./src/controllers/sendComputerinfo.js",
       "./src/controllers/sendProcessInfo.js",
+      "./src/controllers/sendRealTimeInfo.js",
       "./src/controllers/Taskkill.js",
       "./src/database/database.js",
       "./src/routes/routes.js",
