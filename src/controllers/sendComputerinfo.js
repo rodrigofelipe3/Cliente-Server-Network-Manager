@@ -25,7 +25,6 @@ const sendComputerInfo = async () => {
     // Processador
     const cpuInfo = await executeCommand("wmic cpu get Name /format:list");
     const processor = cpuInfo.split("=")[1].trim();
-
     // Memória
     const memInfo = await executeCommand(
       "wmic ComputerSystem get TotalPhysicalMemory /format:list"
@@ -38,11 +37,11 @@ const sendComputerInfo = async () => {
     const diskInfo = await executeCommand(
       "wmic diskdrive get Caption /format:list"
     );
-    const hardDisk = diskInfo
+    const hardDisk = diskInfo.trim()
       .split("\r\n")
-      .filter((line) => line)
+      .filter((line) => line )
       .map((line) => line.split("=")[1]);
-
+    const FilteredHardDisk = hardDisk.filter(hd => { if(hd != undefined) return hd})
     // Sistema operacional
     const osInfo = await executeCommand(
       "wmic os get Caption,OSArchitecture,Version /format:list"
@@ -61,13 +60,14 @@ const sendComputerInfo = async () => {
     // Monitores (obter resolução)
     const monitorsinfo = await getMonitorResolutions()
 
-    const monitors = monitorsinfo
+    const monitors = monitorsinfo.replace('"', "")
     // IP e endereço MAC
     const ipConfig = await executeCommand("ipconfig");
     const ipMatch = ipConfig.match(/Endere�o IPv4.*:\s*([\d.]+)/);
     const ip = ipMatch ? ipMatch[1] : "Not Available";
     const macConfig = await executeCommand("getmac");
-    const macAddress = macConfig.split("\r\n")[2]?.trim().replace("   N/A", '') || "Not Available";
+    const macAddressSplited = macConfig.split("\r\n")[2]?.trim().split("   ") || "Not Available";
+    const macAddress = macAddressSplited[0]
 
     // Nome do host
     const host = os.hostname();
@@ -95,7 +95,11 @@ const sendComputerInfo = async () => {
         })
       })
       
-
+    const Devices = filteredNetworkDevices.map(device => { 
+      return device.map(device2 => { 
+        return device2.Name
+      })
+    })
     isRegistred(async (err, row) => {
       if (err) {
         logToFile.logToFile(err);
@@ -106,7 +110,7 @@ const sendComputerInfo = async () => {
       const computerData = {
         processor,
         memory: `${memory} GB`,
-        hard_disk: hardDisk,
+        hard_disk: FilteredHardDisk,
         operating_system: operatingSystem,
         arch,
         release,
@@ -114,7 +118,7 @@ const sendComputerInfo = async () => {
         ip,
         mac_address: macAddress,
         host,
-        network_devices: JSON.stringify(filteredNetworkDevices),
+        network_devices: Devices,
         poweroff: poweroff,
         poweroffhour: poweroffhour,
         powerstatus: true,
@@ -182,8 +186,13 @@ function getMonitorResolutions() {
 
       try {
         const resolutions = JSON.parse(output.trim());
-        const resolutionArray = resolutions.map(screen => screen.Resolution);
-        resolve(resolutionArray);
+        if(Array.isArray(resolutions)){ 
+          const resolutionArray = resolutions?.map(screen => screen.Resolution);
+          resolve(resolutionArray);
+        }else { 
+          resolve(JSON.stringify(resolutions.Resolution))
+        }
+        
       } catch (error) {
         reject(new Error(`Erro ao processar os dados JSON: ${error.message}. Saída: ${output}`));
       }

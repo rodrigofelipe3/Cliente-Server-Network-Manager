@@ -32,10 +32,11 @@ const PORT = 5001;
                         console.error(err);
                         return;
                     }
-
                     const serverFound = row.serverfound;
                     if(serverIp == '') { 
                         findIpResponse('10.10.1.1', '10.10.1.253', 5000, '/api/')
+                    }else if(serverFound == 0 ) { 
+                        findIpResponse('192.168.25.100', '192.168.25.105', 5000, '/api/')
                     }
                     if (serverFound === 1) {
                         sendComputerInfo();

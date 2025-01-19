@@ -43,7 +43,6 @@ const getCpuUsage = async () => {
             if (error) return reject(`exec error: ${error}`);
             if (stderr) return reject(`stderr: ${stderr}`);
 
-
             // Processar a saída para obter o uso do processador
             const lines = stdout.trim().split('\n');
             const usage = lines[1] ? parseInt(lines[1].trim(), 10) : 0;
