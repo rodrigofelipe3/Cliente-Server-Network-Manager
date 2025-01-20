@@ -60,7 +60,7 @@ const sendComputerInfo = async () => {
     // Monitores (obter resolução)
     const monitorsinfo = await getMonitorResolutions()
 
-    const monitors = monitorsinfo.replace('"', "")
+    const monitors = Array.isArray(monitorsinfo) ? monitorsinfo : monitorsinfo.replace('"', "")
     // IP e endereço MAC
     const ipConfig = await executeCommand("ipconfig");
     const ipMatch = ipConfig.match(/Endere�o IPv4.*:\s*([\d.]+)/);

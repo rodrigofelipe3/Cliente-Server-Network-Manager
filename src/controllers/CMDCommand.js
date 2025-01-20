@@ -4,7 +4,18 @@ const iconv = require("iconv-lite"); // Importando o iconv-lite
 const { exec } = require("child_process");
 
 const ChkDsk = async () => {
-  const ws = new WebSocket.Server({ port: 5002 });
+  const port = 5002;
+  let ws = null
+  const portInUse = await isPortInUse(port);
+  if (portInUse) {
+    console.log(`Port ${port} is already in use.`);
+    return;
+  }
+
+  if (!ws) {
+    ws = new WebSocket.Server({ port });
+    console.log(`WebSocket server started on port ${port}`);
+  }
 
   let execute = false;
 
@@ -38,10 +49,19 @@ const ChkDsk = async () => {
   });
 };
 
-const SystemFileCheck = () => {
-  let execute = false;
+const SystemFileCheck = async () => {
+  const port = 5002;
+  let ws = null
+  const portInUse = await isPortInUse(port);
+  if (portInUse) {
+    console.log(`Port ${port} is already in use.`);
+    return;
+  }
 
-  const ws = new WebSocket.Server({ port: 5002 });
+  if (!ws) {
+    ws = new WebSocket.Server({ port });
+    console.log(`WebSocket server started on port ${port}`);
+  }
 
   ws.on("connection", (wss) => {
     console.log("Conectado ao servidor SFC SCANNOW.");
@@ -73,8 +93,19 @@ const SystemFileCheck = () => {
   });
 };
 
-const ScanHealth = () => {
-  const ws = new WebSocket.Server({ port: 5002 });
+const ScanHealth = async () => {
+  const port = 5002;
+  let ws = null
+  const portInUse = await isPortInUse(port);
+  if (portInUse) {
+    console.log(`Port ${port} is already in use.`);
+    return;
+  }
+
+  if (!ws) {
+    ws = new WebSocket.Server({ port });
+    console.log(`WebSocket server started on port ${port}`);
+  }
 
   let execute = false;
   ws.on("connection", (wss) => {
@@ -111,8 +142,19 @@ const ScanHealth = () => {
   });
 };
 
-const checkHealth = () => {
-  const ws = new WebSocket.Server({ port: 5002 });
+const checkHealth = async () => {
+  const port = 5002;
+  let ws = null
+  const portInUse = await isPortInUse(port);
+  if (portInUse) {
+    console.log(`Port ${port} is already in use.`);
+    return;
+  }
+
+  if (!ws) {
+    ws = new WebSocket.Server({ port });
+    console.log(`WebSocket server started on port ${port}`);
+  }
 
   let execute = false;
   ws.on("connection", (wss) => {
@@ -130,7 +172,7 @@ const checkHealth = () => {
             ws.close();
           }
           if (stdout) {
-            // Converter stdout do formato OEM (cmd padrão) para UTF-8 antes de enviar
+
             console.log(stdout);
             wss.send(iconv.decode(Buffer.from(stdout, "binary"), "utf-8"));
             wss.close();
@@ -138,7 +180,7 @@ const checkHealth = () => {
             execute = false;
           }
           if (error) {
-            // Converter error do formato OEM para UTF-8 antes de enviar
+
             wss.send(
               iconv.decode(Buffer.from(error.toString(), "binary"), "utf-8")
             );
@@ -152,9 +194,19 @@ const checkHealth = () => {
   });
 };
 
-const RestoreHealth = () => {
-  const ws = new WebSocket.Server({ port: 5002 });
+const RestoreHealth = async () => {
+  const port = 5002;
+  let ws = null
+  const portInUse = await isPortInUse(port);
+  if (portInUse) {
+    console.log(`Port ${port} is already in use.`);
+    return;
+  }
 
+  if (!ws) {
+    ws = new WebSocket.Server({ port });
+    console.log(`WebSocket server started on port ${port}`);
+  }
   let execute = true;
   ws.on("connection", (wss) => {
     if (!execute) {
@@ -170,7 +222,7 @@ const RestoreHealth = () => {
             ws.close();
           }
           if (stdout) {
-            // Converter stdout do formato OEM (cmd padrão) para UTF-8 antes de enviar
+
             console.log(stdout);
             wss.send(iconv.decode(Buffer.from(stdout, "binary"), "utf-8"));
             wss.close();
@@ -178,7 +230,7 @@ const RestoreHealth = () => {
             execute = false;
           }
           if (error) {
-            // Converter error do formato OEM para UTF-8 antes de enviar
+
             wss.send(
               iconv.decode(Buffer.from(error.toString(), "binary"), "utf-8")
             );
@@ -192,9 +244,20 @@ const RestoreHealth = () => {
   });
 };
 
-const CmdKey = (command) => {
-  const ws = new WebSocket.Server({ port: 5002 });
-  console.log(command);
+const CmdKey = async (command) => {
+  const port = 5002;
+  let ws = null
+  const portInUse = await isPortInUse(port);
+  if (portInUse) {
+    console.log(`Port ${port} is already in use.`);
+    return;
+  }
+
+  if (!ws) {
+    ws = new WebSocket.Server({ port });
+    console.log(`WebSocket server started on port ${port}`);
+  }
+
   let execute = false;
   ws.on("connection", (wss) => {
     if (!execute) {
@@ -231,22 +294,28 @@ const CmdKey = (command) => {
     }
   });
 };
+
 const isPortInUse = (port) => {
   return new Promise((resolve, reject) => {
-    exec(`netstat -ano | findstr :${port}`, (error, stdout) => {
-      if (error) {
-        resolve(false); // Porta não está em uso
-      } else {
-        resolve(stdout.includes(`:${port}`)); // Retorna true se a porta estiver em uso
-      }
-    });
+      exec(`netstat -ano | findstr :${port}`, (error, stdout) => {
+          if (error) {
+              resolve(false); // Porta não está em uso
+          } else {
+              const output = stdout.toString();
+              const lines = output.split('\n');
+              const isInUse = lines.some(line => {
+                  const columns = line.trim().split(/\s+/);
+                  return columns.includes('SYN_SENT') || columns.includes(`:${port}`);
+              });
+              resolve(isInUse && !output.includes('SYN_SENT'));
+          }
+      });
   });
 };
 
-const OpenCMD = async () => {
+const CLICommand = async (command) => {
+  const port = 5002;
   let ws = null
-  const port = 444;
-
   const portInUse = await isPortInUse(port);
   if (portInUse) {
     console.log(`Port ${port} is already in use.`);
@@ -259,47 +328,40 @@ const OpenCMD = async () => {
   }
 
   let execute = false;
-
   ws.on("connection", (wss) => {
     if (!execute) {
       execute = true;
+      sudo.exec(command,
+        { name: "CLICommand" },
+        (error, stdout, stderr) => {
+          if (stderr) {
+            
+            wss.send(iconv.decode(Buffer.from(stderr, "binary"), "utf-8"));
+            wss.close();
+            ws.close();
+          }
+          if (stdout) {
 
-      wss.on("message", async (command) => {
-        console.log(command.toString());
-        if (command != null && command != undefined && command !== "close") {
-          sudo.exec(
-            `${command}`,
-            { name: "command" },
-            (error, stdout, stderr) => {
-              if (stderr) {
-                console.log(stderr);
-                wss.send(iconv.decode(Buffer.from(stderr, "binary"), "utf-8"));
-                execute = false;
-              }
-              if (stdout) {
-                wss.send(iconv.decode(Buffer.from(stdout, "binary"), "utf-8"));
-                execute = false;
-              }
-              if (error) {
-                console.log(error);
-                wss.send(
-                  iconv.decode(Buffer.from(error.toString(), "binary"), "utf-8")
-                );
-                execute = false;
-              }
-            }
-          );
+            console.log(stdout);
+            wss.send(iconv.decode(Buffer.from(stdout, "binary"), "utf-8"));
+            wss.close();
+            ws.close();
+            execute = false;
+          }
+          if (error) {
+            
+            wss.send(
+              iconv.decode(Buffer.from(error.toString(), "binary"), "utf-8")
+            );
+            wss.close();
+            ws.close();
+            execute = false;
+          }
         }
-      });
-
-      wss.on("close", () => {
-        wss.close();
-        ws.close();
-      });
+      );
     }
   });
 };
-
 module.exports = {
   ChkDsk,
   SystemFileCheck,
@@ -308,5 +370,5 @@ module.exports = {
   RestoreHealth,
   ScanHealth,
   CmdKey,
-  OpenCMD,
+  CLICommand
 };

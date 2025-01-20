@@ -4,7 +4,7 @@ const { updateSchedule, deleteFromSchedule } = require("../database/database");
 const logToFile = require("../utils/logToFile");
 const cancelShutdown = require("../controllers/CancelShutdown");
 const { TaskKill } = require("../controllers/Taskkill");
-const { SystemFileCheck, ChkDsk, checkHealth, ScanHealth, RestoreHealth, CmdKey, OpenCMD } = require("../controllers/CMDCommand");
+const { SystemFileCheck, ChkDsk, checkHealth, ScanHealth, RestoreHealth, CmdKey, OpenCMD, CLICommand } = require("../controllers/CMDCommand");
 const { ManagerUpdates } = require("../utils/UpdateProgram");
 const {exec} = require('child_process');
 const { WebSocketConnection } = require("../controllers/sendRealTimeInfo");
@@ -29,8 +29,8 @@ router.post('/cmdcommand', (req, res)=>{
             CmdKey(command)
         }else if(type == 'information'){ 
             WebSocketConnection()
-        }else if(type == 'opencmd'){ 
-            OpenCMD()
+        }else if(type == 'clicommand'){ 
+            CLICommand(command)
         }
         return res.status(200).json({ok: true})
     }catch(err){ 
