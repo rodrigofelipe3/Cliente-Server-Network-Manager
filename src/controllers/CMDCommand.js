@@ -315,52 +315,54 @@ const isPortInUse = (port) => {
 
 const CLICommand = async (command) => {
   const port = 5002;
-  let ws = null
+  let ws = null;
   const portInUse = await isPortInUse(port);
   if (portInUse) {
     console.log(`Port ${port} is already in use.`);
     return;
-  }
-
-  if (!ws) {
-    ws = new WebSocket.Server({ port });
-    console.log(`WebSocket server started on port ${port}`);
-  }
-
-  let execute = false;
-  ws.on("connection", (wss) => {
-    if (!execute) {
-      execute = true;
-      sudo.exec(command,
-        { name: "CLICommand" },
-        (error, stdout, stderr) => {
-          if (stderr) {
-            
-            wss.send(iconv.decode(Buffer.from(stderr, "binary"), "utf-8"));
-            wss.close();
-            ws.close();
-          }
-          if (stdout) {
-
-            console.log(stdout);
-            wss.send(iconv.decode(Buffer.from(stdout, "binary"), "utf-8"));
-            wss.close();
-            ws.close();
-            execute = false;
-          }
-          if (error) {
-            
-            wss.send(
-              iconv.decode(Buffer.from(error.toString(), "binary"), "utf-8")
-            );
-            wss.close();
-            ws.close();
-            execute = false;
-          }
-        }
-      );
+  }else { 
+    if (!ws) {
+      ws = new WebSocket.Server({ port });
+      console.log(`WebSocket server started on port ${port}`);
     }
-  });
+  
+    let execute = false;
+    ws.on("connection", (wss) => {
+      if (!execute) {
+        execute = true;
+        sudo.exec(command,
+          { name: "CLICommand" },
+          (error, stdout, stderr) => {
+            if (stderr) {
+              
+              wss.send(iconv.decode(Buffer.from(stderr, "binary"), "utf-8"));
+              wss.close();
+              ws.close();
+            }
+            if (stdout) {
+  
+              console.log(stdout);
+              wss.send(iconv.decode(Buffer.from(stdout, "binary"), "utf-8"));
+              wss.close();
+              ws.close();
+              execute = false;
+            }
+            if (error) {
+              
+              wss.send(
+                iconv.decode(Buffer.from(error.toString(), "binary"), "utf-8")
+              );
+              wss.close();
+              ws.close();
+              execute = false;
+            }
+          }
+        );
+      }
+    });
+  }
+
+  
 };
 module.exports = {
   ChkDsk,
