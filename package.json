@@ -1,5 +1,5 @@
 {
-  "name": "NetworkPowerManager",
+  "name": "NetworkManagerClient",
   "version": "1.0.0",
   "bin": "app.js",
   "scripts": {
@@ -38,16 +38,9 @@
     "iconv-lite": "^0.6.3",
     "node-fetch": "^2.7.0",
     "node-gyp": "^10.2.0",
-    "node-windows": "^1.0.0-beta.8",
     "nodemon": "^3.1.4",
-    "pidusage": "^3.0.2",
-    "robotjs": "^0.6.0",
-    "socket.io": "^4.8.0",
-    "socket.io-client": "^4.8.0",
     "sqlite3": "^5.1.7",
     "sudo-prompt": "^9.2.1",
-    "systeminformation": "^5.23.5",
-    "windows-elevate": "^1.0.1",
     "ws": "^8.18.0"
   }
 }

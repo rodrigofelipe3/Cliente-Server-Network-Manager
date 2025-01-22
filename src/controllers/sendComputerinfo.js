@@ -1,4 +1,3 @@
-const si = require("systeminformation");
 const os = require("os"); // Importa a biblioteca os
 const logToFile = require("../utils/logToFile");
 const { UpdateRegister, isRegistred } = require("../database/database");
