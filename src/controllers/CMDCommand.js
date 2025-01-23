@@ -62,7 +62,7 @@ const SystemFileCheck = async () => {
     ws = new WebSocket.Server({ port });
     console.log(`WebSocket server started on port ${port}`);
   }
-
+  let execute = false
   ws.on("connection", (wss) => {
     console.log("Conectado ao servidor SFC SCANNOW.");
     if (!execute) {
