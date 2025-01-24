@@ -14,8 +14,8 @@ const sendHeartbeat = async () => {
         "Content-Type":"application/json"
       }
     });
-    console.log(response)
-    if(response.status == 200){ 
+    if(response.status == 200){
+      console.log('HeartBeat Enviado com Sucesso!')
       logToFile.logToFile("HeartBeat enviado com sucesso!")
     }else  { 
       logToFile.logToFile("Servidor não encontrado ou está offline")

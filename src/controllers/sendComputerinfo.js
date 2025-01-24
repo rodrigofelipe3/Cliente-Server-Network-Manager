@@ -119,7 +119,6 @@ const sendComputerInfo = async () => {
         host,
         network_devices: Devices,
         poweroff: poweroff,
-        poweroffhour: poweroffhour,
         powerstatus: true,
       };
       console.log(computerData)

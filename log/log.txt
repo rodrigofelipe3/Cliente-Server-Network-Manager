@@ -1,2 +1,2 @@
-2025-01-23T01:47:17.092Z - Server rodando na porta 5001
-2025-01-23T01:47:20.029Z - Dados enviados com sucesso:
+2025-01-24T17:50:28.819Z - Server rodando na porta 5001
+2025-01-24T17:50:31.802Z - Dados enviados com sucesso:
