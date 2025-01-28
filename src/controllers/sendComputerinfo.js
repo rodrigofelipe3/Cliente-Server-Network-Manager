@@ -103,8 +103,6 @@ const sendComputerInfo = async () => {
       if (err) {
         logToFile.logToFile(err);
       }
-      const poweroff = row.poweroff;
-      const poweroffhour = row.time;
       // Montar JSON
       const computerData = {
         processor,
@@ -118,13 +116,12 @@ const sendComputerInfo = async () => {
         mac_address: macAddress,
         host,
         network_devices: Devices,
-        poweroff: poweroff,
         powerstatus: true,
       };
       console.log(computerData)
-      const { version, serverIp } = await loadConfig.loadConfig();
+      const { version, serverIP } = await loadConfig.loadConfig();
       const response = await fetch(
-        `http://${serverIp}:5000/api/registerComputer`,
+        `http://${serverIP}:5000/api/registerComputer`,
         {
           method: "POST",
           headers: {

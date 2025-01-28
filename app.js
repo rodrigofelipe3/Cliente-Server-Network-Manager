@@ -19,24 +19,24 @@ const PORT = 5001;
         const haveUpdates = await ManagerUpdates()
         const TableCreated = await CreateDatabase();
         if (haveUpdates == true) {
-            exec('start "" """C:\\Program Files\\NetworkPower Manager\\Update.exe""" ')
+            exec('start "" """C:\\Program Files\\NetworkManager Client\\Update.exe""" ')
         }
         else {
             
             // Altera o papel de parede
             ChangeWallPaper();
             if (TableCreated == true) {
-                const {version, serverIp} = await loadConfig()
+                const {version, serverIP} = await loadConfig()
                 GetFoundServer(async (err, row) => {
                     if (err) {
                         console.error(err);
                         return;
                     }
                     const serverFound = row.serverfound;
-                    if(serverIp == '') { 
-                        findIpResponse('10.10.1.1', '10.10.1.253', 5000, '/api/')
+                    if(serverIP == '') { 
+                        findIpResponse()
                     }else if(serverFound == 0 ) { 
-                        findIpResponse('192.168.25.100', '192.168.25.105', 5000, '/api/')
+                        findIpResponse()
                     }
                     if (serverFound === 1) {
                         sendComputerInfo();

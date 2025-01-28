@@ -1,6 +1,5 @@
 const fs = require('fs');
-const path = require('path');
-const { findIpResponse } = require('./src/utils/findServer');
+const { logToFile } = require('./src/utils/logToFile');
 
 async function loadConfig() {
     const configPath = "./config.json";
@@ -8,10 +7,10 @@ async function loadConfig() {
     try {
         const data = fs.readFileSync(configPath, 'utf8'); 
         const config = JSON.parse(data); 
-        return {version: config.version, serverIp: config.serverIp}
+        return {version: config.version, serverIP: config.serverIP, startIP: config.startIP, endIP: config.endIP}
     } catch (error) {
         console.error('Erro ao carregar o arquivo config.json:', error);
-        findIpResponse('10.10.1.1', '10.10.1.253', 5000, '/api/')
+        logToFile('Erro ao carregar o arquivo config.json:', error)
     }
 }
 

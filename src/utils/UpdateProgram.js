@@ -5,12 +5,11 @@ const { findIpResponse } = require('./findServer')
 
 
 const verifyUpdate = async () => {
-    const { version, serverIp } = await loadConfig();
-
+    const { version, serverIP} = await loadConfig();
     const attemptFetch = async (resolve, reject) => {
         try {
-            if (serverIp != "") {
-                const url = `http://${serverIp}:5000/api/updates`;
+            if (serverIP != "") {
+                const url = `http://${serverIP}:5000/api/updates`;
                 
                 const response = await fetch(url, {
                     method: "POST",
@@ -36,7 +35,7 @@ const verifyUpdate = async () => {
                     }
                 });
             } else {
-                findIpResponse("10.10.1.1", "10.10.1.253", 5000, "/api/");
+                findIpResponse();
             }
         } catch (err) {
             console.error("Erro inesperado:", err);
@@ -51,7 +50,7 @@ const verifyUpdate = async () => {
 
 const getActualVersion = () => {
     return new Promise(async (resolve, reject) => {
-        const {version, serverIp} = await loadConfig()
+        const {version, serverIP} = await loadConfig()
         resolve(version)
     });
 };

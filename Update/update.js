@@ -4,16 +4,13 @@ const fetch = require('node-fetch')
 const { exec } = require('child_process');
 const { loadConfig } = require('../loadConfig');
 const { logToFile } = require('../src/utils/logToFile');
-let caminhoAtualizacao = "";
-//const caminhoInstalacao = "C:\\Program Files\\NetworkSuport";
 
-let caminhoInstalacao = "";
 const verifyUpdate = async () => {
 
-    const { version, serverIp } = await loadConfig()
+    const { version, serverIP } = await loadConfig()
     return new Promise(async (resolve, reject) => {
         try {
-            url = `http://${serverIp}:5000/api/updates`
+            url = `http://${serverIP}:5000/api/updates`
 
             const response = await fetch(url, {
                 method: "POST",
@@ -44,11 +41,12 @@ const UpdateConfigJson = (version) => {
             }
             console.log(data)
             let jsonData = JSON.parse(data)
-            console.log('JSONPARSE: ' + jsonData)
             jsonData.version = version
             const options = { 
                 version: version,
-                serverIp: jsonData.serverIp
+                serverIP: jsonData.serverIP,
+                startIP: jsonData.startIP,
+                endIP: jsonData.endIP
             }
             fs.writeFile('./config.json', JSON.stringify(options, null, 4), (err) => {
                 if (err) {
@@ -56,7 +54,7 @@ const UpdateConfigJson = (version) => {
                     return
                 }
 
-                console.log('Config.json atualizado com sucesso!!')
+                logToFile('Config.json atualizado com sucesso!!')
             })
         })
     } catch (err) {
@@ -74,7 +72,7 @@ const UpdateFiles = async () => {
         
         const arquivos = fs.readdirSync(filepath);
         if (version != undefined) {
-            exec('taskkill /f /im NetworkPowerManager.exe')
+            exec('taskkill /f /im NetworkManagerClient.exe')
             // Criar o diretório de destino, caso não exista
             if (!fs.existsSync(instalationpath)) {
                 fs.mkdirSync(instalationpath, { recursive: true });
@@ -98,7 +96,7 @@ const UpdateFiles = async () => {
 
             console.log("Atualização concluída!");
             UpdateConfigJson(version)
-            exec('start "" """C:\\Program Files\\NetworkPower Manager\\NetworkPowerManager.exe"""')
+            exec('start "" """C:\\Program Files\\NetworkManager Client\\NetworkManagerClient.exe"""')
         }
 
     } catch (error) {

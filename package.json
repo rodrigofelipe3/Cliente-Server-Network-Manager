@@ -8,7 +8,6 @@
   "pkg": {
     "assets": [
       "./src/**/*",
-      "C:/Users/Setor Administrativo/Documents/Cliente-Server-Network-Manager/node_modules/**/*",
       "./loadConfig.js",
       "./src/controllers/CancelShutdown.js",
       "./src/controllers/Shutdown.js",
@@ -29,7 +28,8 @@
     "scripts": "app.js",
     "targets": [
       "node16-win-x64"
-    ]
+    ],
+    "outputPath":"C:/Program Files/NetworkManager Client"
   },
   "dependencies": {
     "cors": "^2.8.5",

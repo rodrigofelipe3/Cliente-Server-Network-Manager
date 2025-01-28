@@ -23,7 +23,7 @@ const Shutdown0 = (seconds) => {
 
 const Restart = () => { 
   return new Promise((resolve, reject) => {
-    const seconds = 100
+    const seconds = 0
     exec(`shutdown /r /f /t ${seconds}`, (error, stdout, stderr) => {
       if (error) {
         logToFile.logToFile(`Erro ao executar o comando: ${error.message}`);

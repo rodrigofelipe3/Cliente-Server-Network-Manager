@@ -8,11 +8,13 @@
         "../src/database/database.js",
         "../src/utils/UpdateProgram.js",
         "../src/utils/logToFile.js",
-        "../node_modules/**/*"
+        "../node_modules/**/*",
+        "C:/Program Files/NetPower Manager/src/utils/findServer.js"
       ],
       "scripts": "update.js",
       "targets": [
         "node16-win-x64"
-      ]
+      ],
+      "outputPath": "C:/Program Files/NetworkManager Client"
     }
 }

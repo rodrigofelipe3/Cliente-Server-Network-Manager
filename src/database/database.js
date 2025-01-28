@@ -53,7 +53,6 @@ const CreateTable = () => {
             id INTEGER PRIMARY KEY,
             time TEXT NOT NULL DEFAULT 'none',
             registred INTEGER NOT NULL DEFAULT 0,
-            poweroff INTEGER NOT NULL DEFAULT 1,
             serverfound INTEGER NOT NULL DEFAULT 0
         );
         `,
