@@ -1,10 +1,9 @@
 const express = require("express");
 const {Shutdown0, Restart} = require("../controllers/Shutdown");
-const { updateSchedule, deleteFromSchedule } = require("../database/database");
+const { updateSchedule } = require("../database/database");
 const logToFile = require("../utils/logToFile");
 const cancelShutdown = require("../controllers/CancelShutdown");
 const { TaskKill } = require("../controllers/Taskkill");
-const { SystemFileCheck, ChkDsk, checkHealth, ScanHealth, RestoreHealth, CmdKey, OpenCMD, CLICommand } = require("../controllers/CMDCommand");
 const { ManagerUpdates } = require("../utils/UpdateProgram");
 const {exec} = require('child_process');
 const { WebSocketConnection } = require("../controllers/sendRealTimeInfo");
@@ -12,34 +11,10 @@ const router = express.Router()
 
 
 
-router.post('/cmdcommand', (req, res)=>{ 
-    const {type, command} = req.body
-    try{
-        if(type == "sfc"){ 
-            SystemFileCheck()
-        }else if(type == 'chkdsk'){ 
-            ChkDsk()
-        }else if(type == 'checkhealth'){ 
-            checkHealth()
-        }else if(type == 'scanhealth'){ 
-            ScanHealth()
-        }else if(type == 'restorehealth'){ 
-            RestoreHealth()
-        }else if (type == 'cmdkey'){ 
-            CmdKey(command)
-        }else if(type == 'information'){ 
-            WebSocketConnection()
-        }else if(type == 'clicommand'){ 
-            CLICommand(command)
-        }
-        return res.status(200).json({ok: true})
-    }catch(err){ 
-        return res.status(500).json({ok: false, error: err})
-    }
-       
-})
-
-
+router.post('/cmdcommand', async (req, res) => {  
+    //WebSocketConnection()
+    return res.status(200)
+});
 router.post('/shutdown', async (req, res) => {  
     const seconds = 300
     try { 
@@ -97,6 +72,7 @@ router.post('/createshutdown/:time', (req, res) => {
 });
 
 router.post("/cancel/shutdown",  async (req, res)=>{
+    console.log('Cancelando o desligamento!')
     const id = 1
     try { 
        const response = await cancelShutdown(id)

@@ -1,3 +1,13 @@
-2025-01-27T19:32:26.697Z - Server rodando na porta 5001
-2025-01-27T19:32:29.843Z - Dados enviados com sucesso:
-2025-01-27T19:47:26.163Z - Programa 15400 finalizado!
+2025-03-21T11:49:38.972Z - Server rodando na porta 5001
+2025-03-21T11:49:42.079Z - Dados enviados com sucesso:
+2025-03-21T11:55:34.073Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2025-03-21T11:55:34.072Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2025-03-21T11:55:34.074Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2025-03-21T11:55:34.074Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2025-03-21T11:55:34.073Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2025-03-21T11:55:34.074Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2025-03-21T11:55:34.075Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2025-03-21T11:57:02.037Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: read ECONNRESET
+2025-03-21T11:57:11.129Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: connect ECONNREFUSED 10.10.1.139:5000
+2025-03-21T11:58:01.163Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: connect ECONNREFUSED 10.10.1.139:5000
+2025-03-21T11:58:51.188Z - Erro ao enviar heartbeat: FetchError: request to http://10.10.1.139:5000/api/heartbeat/RODRIGO failed, reason: connect ECONNREFUSED 10.10.1.139:5000

@@ -1,5 +1,5 @@
 {
-  "name": "NetworkManagerClient",
+  "name": "NetworkManagerClient2",
   "version": "1.0.0",
   "bin": "app.js",
   "scripts": {
@@ -10,8 +10,8 @@
       "./src/**/*",
       "./loadConfig.js",
       "./src/controllers/CancelShutdown.js",
+      "./src/controllers/WebsocketConnection.js",
       "./src/controllers/Shutdown.js",
-      "./src/controllers/CMDCommand.js",
       "./src/controllers/SendAHb.js",
       "./src/controllers/sendComputerinfo.js",
       "./src/controllers/sendProcessInfo.js",

@@ -10,6 +10,8 @@ const { ChangeWallPaper } = require("./src/utils/ChangeWallpaper");
 const { loadConfig } = require("./loadConfig");
 const { ManagerUpdates } = require("./src/utils/UpdateProgram");
 const { findIpResponse } = require("./src/utils/findServer");
+const { WssConnection } = require("./src/controllers/WebsocketConnection");
+const { WebSocketConnection } = require("./src/controllers/sendRealTimeInfo");
 
 const app = express();
 const PORT = 5001;
@@ -19,7 +21,7 @@ const PORT = 5001;
         const haveUpdates = await ManagerUpdates()
         const TableCreated = await CreateDatabase();
         if (haveUpdates == true) {
-            exec('start "" """C:\\Program Files\\NetworkManager Client\\Update.exe""" ')
+            exec('start "" """C:\\Program Files\\NetworkManager Client\\startUpdate.vbs""" ')
         }
         else {
             
@@ -45,13 +47,11 @@ const PORT = 5001;
                 });
 
             }
-            // Obtém informações do servidor encontrado
-
-            // Inicializa o servidor após as etapas anteriores
             app.use(cors());
             app.use(express.json());
             app.use("/api", route);
-
+            WebSocketConnection()
+            WssConnection()
             app.listen(PORT, (err) => {
                 if (err) {
                     console.error("Erro ao iniciar o servidor:", err);

@@ -82,55 +82,6 @@ const getMemoryUsage = async () => {
 };
 
 
-const { spawn } = require('child_process');
-
-function getCpuTemperature() {
-    return new Promise((resolve, reject) => {
-        // Comando PowerShell para obter a temperatura
-        const command = `
-      (Get-WmiObject MSAcpi_ThermalZoneTemperature -Namespace "root/wmi").CurrentTemperature / 10 - 273.15
-    `;
-
-        // Executa o PowerShell usando spawn
-        const powershell = spawn('powershell.exe', ['-Command', command]);
-
-        let stdout = '';
-        let stderr = '';
-
-        // Captura a saída padrão
-        powershell.stdout.on('data', (data) => {
-            stdout += data.toString();
-        });
-
-        // Captura erros, se houver
-        powershell.stderr.on('data', (data) => {
-            stderr += data.toString();
-        });
-
-        // Trata o fechamento do processo
-        powershell.on('close', (code) => {
-            if (code !== 0 || stderr) {
-                return reject(`Erro ao executar o comando: ${stderr || 'Código de saída ' + code}`);
-            }
-
-            const temperature = parseFloat(stdout.trim());
-            if (isNaN(temperature)) {
-                return reject('Não foi possível converter a saída em um número.');
-            }
-
-            resolve(temperature);
-        });
-
-        // Trata erros do próprio processo spawn
-        powershell.on('error', (error) => {
-            reject(`Erro ao iniciar o processo: ${error.message}`);
-        });
-    });
-}
-
-
-
-
 const isPortInUse = (port) => {
     return new Promise((resolve, reject) => {
         exec(`netstat -ano | findstr :${port}`, (error, stdout) => {
@@ -141,8 +92,9 @@ const isPortInUse = (port) => {
                 const lines = output.split('\n');
                 const isInUse = lines.some(line => {
                     const columns = line.trim().split(/\s+/);
-                    return columns.includes('SYN_SENT') || columns.includes(`:${port}`);
+                    return columns.includes('SYN_SENT') ||columns.includes(`:${port}`);
                 });
+               
                 resolve(isInUse && !output.includes('SYN_SENT'));
             }
         });
@@ -153,7 +105,7 @@ const isPortInUse = (port) => {
 
 
 const WebSocketConnection = async () => {
-    const port = 443;
+    const port = 446;
     let wss = null;
     let activeUsers = {};
 
@@ -168,11 +120,10 @@ const WebSocketConnection = async () => {
         console.log(`WebSocket server started on port ${port}`);
     }
 
-    try {
-
+    try { 
         wss.on('connection', (ws) => {
 
-            console.log('Conectado ao cliente');
+            console.log('Conectado ao cliente na porta 446');
             // Função para enviar mensagens assíncrona
             ws.on('message', (message) => {
                 const messageString = message.toString()
@@ -184,11 +135,10 @@ const WebSocketConnection = async () => {
                         activeUsers[data.userId] = ws;
                         console.log('Usuário autenticado:', data.userId);
                     }
-                } else {
+                }else if(messageString == 'close') { 
                     ws.close()
-                    wss != null ? wss.close() : undefined
-                    wss != null ? wss = null : undefined
-                    activeUsers = {}
+                    console.log('Cliente Desconectado')
+                    wss = null
                 }
             })
             const sendMessageAsync = async () => {
@@ -196,16 +146,8 @@ const WebSocketConnection = async () => {
                     const cpuData = await getCpuUsage();
                     const memoryData = await getMemoryUsage();
                     const processes = await sendTopMemoryProcesses()
-                    const temp = await // Uso da função
-                        getCpuTemperature()
-                            .then((temperature) => {
-                                return temperature.toFixed(2)
 
-                            })
-                            .catch((error) => {
-                                console.error(error);
-                            });
-                    const message = `usage:${cpuData.usage},memper:${memoryData.usedMemoryPercentage},usedmemory:${memoryData.usedMemory},totalmemory:${memoryData.totalMemory},freemem:${memoryData.freeMemory},temp:${temp},processes:${processes}`;
+                    const message = `usage:${cpuData.usage},memper:${memoryData.usedMemoryPercentage},usedmemory:${memoryData.usedMemory},totalmemory:${memoryData.totalMemory},freemem:${memoryData.freeMemory},processes:${processes}`;
 
                     if (ws.readyState === WebSocket.OPEN) {
                         ws.send(message, (err) => {
@@ -231,9 +173,6 @@ const WebSocketConnection = async () => {
                         break;
                     }
                 }
-                wss != null ? wss.close() : undefined
-                wss != null ? wss = null : undefined
-                activeUsers = {}
             });
             ws.on('error', (err) => {
                 console.error('Erro na conexão WebSocket:', err);
@@ -241,7 +180,7 @@ const WebSocketConnection = async () => {
         });
 
     } catch (e) {
-        if (e.code == 'EADDRINUSE') console.error('A porta 443 já está em uso')
+        console.log(e)
     }
 };
 

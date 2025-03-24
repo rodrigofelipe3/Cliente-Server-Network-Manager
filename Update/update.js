@@ -96,7 +96,7 @@ const UpdateFiles = async () => {
 
             console.log("Atualização concluída!");
             UpdateConfigJson(version)
-            exec('start "" """C:\\Program Files\\NetworkManager Client\\NetworkManagerClient.exe"""')
+            exec('start "" """C:\\Program Files\\NetworkManager Client\\start.vbs"""')
         }
 
     } catch (error) {
